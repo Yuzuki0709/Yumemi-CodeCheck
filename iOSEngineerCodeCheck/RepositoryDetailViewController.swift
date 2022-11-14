@@ -11,15 +11,12 @@ import UIKit
 class RepositoryDetailViewController: UIViewController {
     
     @IBOutlet weak var userImageView: UIImageView!
-    
-    @IBOutlet weak var titleLabel: UILabel!
-    
+    @IBOutlet weak var titleLabel:    UILabel!
     @IBOutlet weak var languageLabel: UILabel!
-    
-    @IBOutlet weak var starsLabel: UILabel!
+    @IBOutlet weak var starsLabel:    UILabel!
     @IBOutlet weak var watchersLabel: UILabel!
-    @IBOutlet weak var forksLabel: UILabel!
-    @IBOutlet weak var issuesLabel: UILabel!
+    @IBOutlet weak var forksLabel:    UILabel!
+    @IBOutlet weak var issuesLabel:   UILabel!
     
     var repositorySearchViewController: RepositorySearchViewController!
     
