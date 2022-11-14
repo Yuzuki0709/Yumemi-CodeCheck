@@ -50,10 +50,10 @@ class RepositorySearchViewController: UITableViewController, UISearchBarDelegate
                 self.repositories = items
                 
                 DispatchQueue.main.async {
+                    // これ呼ばなきゃリストが更新されません
                     self.tableView.reloadData()
                 }
             }
-            // これ呼ばなきゃリストが更新されません
             task?.resume()
         }
         
