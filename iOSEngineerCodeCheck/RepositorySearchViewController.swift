@@ -89,5 +89,4 @@ class RepositorySearchViewController: UITableViewController, UISearchBarDelegate
         performSegue(withIdentifier: "Detail", sender: self)
         
     }
-    
 }

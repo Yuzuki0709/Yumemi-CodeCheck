@@ -31,7 +31,6 @@ class RepositoryDetailViewController: UIViewController {
         forksLabel.text = "\(repository["forks_count"] as? Int ?? 0) forks"
         issuesLabel.text = "\(repository["open_issues_count"] as? Int ?? 0) open issues"
         fetchUserImage()
-        
     }
     
     func fetchUserImage(){
@@ -50,7 +49,5 @@ class RepositoryDetailViewController: UIViewController {
             }
         }
         .resume()
-        
     }
-    
 }
