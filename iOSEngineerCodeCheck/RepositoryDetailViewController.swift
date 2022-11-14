@@ -35,10 +35,13 @@ final class RepositoryDetailViewController: UIViewController {
     func fetchUserImage(){
         
         guard let owner = repository["owner"] as? [String: Any],
-              let imageURLString = owner["avatar_url"] as? String else { return }
+              let imageURLString = owner["avatar_url"] as? String,
+              let imageURL = URL(string: imageURLString) else { return }
         
-        URLSession.shared.dataTask(with: URL(string: imageURLString)!) { (data, res, err) in
-            let userImage = UIImage(data: data!)!
+        URLSession.shared.dataTask(with: imageURL) { (data, res, err) in
+            guard let data = data,
+                  let userImage = UIImage(data: data) else { return }
+            
             DispatchQueue.main.async {
                 self.userImageView.image = userImage
             }
