@@ -32,7 +32,7 @@ final class RepositoryDetailViewController: UIViewController {
         fetchUserImage()
     }
     
-    func fetchUserImage(){
+    private func fetchUserImage(){
         
         guard let owner = repository["owner"] as? [String: Any],
               let imageURLString = owner["avatar_url"] as? String,
