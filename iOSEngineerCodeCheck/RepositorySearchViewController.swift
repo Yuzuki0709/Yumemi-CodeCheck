@@ -17,7 +17,7 @@ class RepositorySearchViewController: UITableViewController, UISearchBarDelegate
     var task: URLSessionTask?
     var searchWord: String!
     var url: String!
-    var idx: Int!
+    var index: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +84,7 @@ class RepositorySearchViewController: UITableViewController, UISearchBarDelegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 画面遷移時に呼ばれる
-        idx = indexPath.row
+        index = indexPath.row
         performSegue(withIdentifier: "Detail", sender: self)
         
     }
