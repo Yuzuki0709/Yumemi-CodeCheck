@@ -58,7 +58,7 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
         
         if segue.identifier == "Detail"{
             let detailVC = segue.destination as! RepositoryDetailViewController
-            detailVC.repositorySearchViewController = self
+            detailVC.repository = selectedRepository!
         }
         
     }

@@ -18,12 +18,10 @@ final class RepositoryDetailViewController: UIViewController {
     @IBOutlet private weak var forksLabel:    UILabel!
     @IBOutlet private weak var issuesLabel:   UILabel!
     
-    var repositorySearchViewController: RepositorySearchViewController!
+    var repository: [String: Any]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let repository = repositorySearchViewController.repositories[repositorySearchViewController.index]
         
         languageLabel.text = "Written in \(repository["language"] as? String ?? "")"
         starsLabel.text = "\(repository["stargazers_count"] as? Int ?? 0) stars"
@@ -34,8 +32,6 @@ final class RepositoryDetailViewController: UIViewController {
     }
     
     func fetchUserImage(){
-        
-        let repository = repositorySearchViewController.repositories[repositorySearchViewController.index]
         
         titleLabel.text = repository["full_name"] as? String
         
