@@ -19,7 +19,7 @@ class RepositoryDetailViewController: UIViewController {
     @IBOutlet weak var starsLabel: UILabel!
     @IBOutlet weak var watchersLabel: UILabel!
     @IBOutlet weak var forksLabel: UILabel!
-    @IBOutlet weak var IsssLbl: UILabel!
+    @IBOutlet weak var issuesLabel: UILabel!
     
     var vc1: RepositorySearchViewController!
         
@@ -32,7 +32,7 @@ class RepositoryDetailViewController: UIViewController {
         starsLabel.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
         watchersLabel.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
         forksLabel.text = "\(repo["forks_count"] as? Int ?? 0) forks"
-        IsssLbl.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
+        issuesLabel.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
         getImage()
         
     }

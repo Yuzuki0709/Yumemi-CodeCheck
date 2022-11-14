@@ -136,8 +136,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="J6o-vL-S1z"/>
                     <connections>
-                        <outlet property="IsssLbl" destination="dzg-K8-h2L" id="L0v-sy-cD4"/>
                         <outlet property="forksLabel" destination="ZMv-4f-X2V" id="i84-sH-c5t"/>
+                        <outlet property="issuesLabel" destination="dzg-K8-h2L" id="L0v-sy-cD4"/>
                         <outlet property="languageLabel" destination="s3M-QO-Kom" id="x3L-gZ-aZZ"/>
                         <outlet property="starsLabel" destination="0WZ-UA-R8O" id="gYb-gI-iMf"/>
                         <outlet property="titleLabel" destination="4q1-pG-WSB" id="UQ0-5D-rWe"/>
