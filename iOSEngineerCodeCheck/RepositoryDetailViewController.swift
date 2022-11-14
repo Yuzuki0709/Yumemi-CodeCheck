@@ -16,7 +16,7 @@ class RepositoryDetailViewController: UIViewController {
     
     @IBOutlet weak var languageLabel: UILabel!
     
-    @IBOutlet weak var StrsLbl: UILabel!
+    @IBOutlet weak var starsLabel: UILabel!
     @IBOutlet weak var WchsLbl: UILabel!
     @IBOutlet weak var FrksLbl: UILabel!
     @IBOutlet weak var IsssLbl: UILabel!
@@ -29,7 +29,7 @@ class RepositoryDetailViewController: UIViewController {
         let repo = vc1.repositories[vc1.index]
         
         languageLabel.text = "Written in \(repo["language"] as? String ?? "")"
-        StrsLbl.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
+        starsLabel.text = "\(repo["stargazers_count"] as? Int ?? 0) stars"
         WchsLbl.text = "\(repo["wachers_count"] as? Int ?? 0) watchers"
         FrksLbl.text = "\(repo["forks_count"] as? Int ?? 0) forks"
         IsssLbl.text = "\(repo["open_issues_count"] as? Int ?? 0) open issues"
