@@ -14,7 +14,6 @@ class RepositorySearchViewController: UITableViewController, UISearchBarDelegate
     
     var repositories: [[String: Any]] = []
     
-    var task:       URLSessionTask?
     var searchWord: String!
     var url:        String!
     var index:      Int!
@@ -32,17 +31,13 @@ class RepositorySearchViewController: UITableViewController, UISearchBarDelegate
         return true
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        task?.cancel()
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         searchWord = searchBar.text!
         
         if searchWord.count != 0 {
             url = "https://api.github.com/search/repositories?q=\(searchWord!)"
-            task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, res, err) in
+            URLSession.shared.dataTask(with: URL(string: url)!) { (data, res, err) in
                 
                 guard let obj   = try! JSONSerialization.jsonObject(with: data!) as? [String: Any],
                       let items = obj["items"] as? [[String: Any]] else { return }
@@ -54,7 +49,7 @@ class RepositorySearchViewController: UITableViewController, UISearchBarDelegate
                     self.tableView.reloadData()
                 }
             }
-            task?.resume()
+            .resume()
         }
         
     }
