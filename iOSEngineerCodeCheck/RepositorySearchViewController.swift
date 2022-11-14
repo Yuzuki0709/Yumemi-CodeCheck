@@ -34,8 +34,8 @@ class RepositorySearchViewController: UITableViewController, UISearchBarDelegate
         guard let searchWord = searchBar.text,
               !searchWord.isEmpty else { return }
         
-        let urlString = "https://api.github.com/search/repositories?q=\(searchWord)"
-        guard let githubAPIURL = URL(string: urlString) else { return }
+        let githubAPIURLString = "https://api.github.com/search/repositories?q=\(searchWord)"
+        guard let githubAPIURL = URL(string: githubAPIURLString) else { return }
         
         URLSession.shared.dataTask(with: githubAPIURL) { (data, res, err) in
             
