@@ -31,25 +31,26 @@ class RepositorySearchViewController: UITableViewController, UISearchBarDelegate
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        let searchWord = searchBar.text!
+        guard let searchWord = searchBar.text,
+              !searchWord.isEmpty else { return }
         
-        if searchWord.count != 0 {
-            let urlString = "https://api.github.com/search/repositories?q=\(searchWord)"
-            URLSession.shared.dataTask(with: URL(string: urlString)!) { (data, res, err) in
-                
-                guard let obj   = try! JSONSerialization.jsonObject(with: data!) as? [String: Any],
-                      let items = obj["items"] as? [[String: Any]] else { return }
-                
-                self.repositories = items
-                
-                DispatchQueue.main.async {
-                    // これ呼ばなきゃリストが更新されません
-                    self.tableView.reloadData()
-                }
+        let urlString = "https://api.github.com/search/repositories?q=\(searchWord)"
+        guard let githubAPIURL = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: githubAPIURL) { (data, res, err) in
+            
+            guard let data = data,
+                  let obj   = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+                  let items = obj["items"] as? [[String: Any]] else { return }
+            
+            self.repositories = items
+            
+            DispatchQueue.main.async {
+                // これ呼ばなきゃリストが更新されません
+                self.tableView.reloadData()
             }
-            .resume()
         }
-        
+        .resume()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
