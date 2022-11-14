@@ -12,10 +12,8 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
     
     @IBOutlet private weak var searchBar: UISearchBar!
     
-    var repositories: [[String: Any]] = []
-    
+    var repositories:      [[String: Any]] = []
     var selectedRepository: [String: Any]? = nil
-    var index:      Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +78,6 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 画面遷移時に呼ばれる
-        index = indexPath.row
         selectedRepository = repositories[indexPath.row]
         performSegue(withIdentifier: "Detail", sender: self)
         
