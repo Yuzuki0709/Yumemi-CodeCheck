@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RepositorySearchViewController: UITableViewController, UISearchBarDelegate {
+final class RepositorySearchViewController: UITableViewController, UISearchBarDelegate {
     
     @IBOutlet private weak var searchBar: UISearchBar!
     
