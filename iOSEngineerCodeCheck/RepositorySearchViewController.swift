@@ -22,12 +22,6 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
         searchBar.delegate = self
     }
     
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        // ↓こうすれば初期のテキストを消せる
-        searchBar.text = ""
-        return true
-    }
-    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         guard let searchWord = searchBar.text,
