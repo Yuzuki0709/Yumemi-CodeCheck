@@ -10,7 +10,7 @@ import UIKit
 
 class RepositorySearchViewController: UITableViewController, UISearchBarDelegate {
     
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet private weak var searchBar: UISearchBar!
     
     var repositories: [[String: Any]] = []
     
