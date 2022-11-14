@@ -138,9 +138,9 @@
                     <connections>
                         <outlet property="FrksLbl" destination="ZMv-4f-X2V" id="i84-sH-c5t"/>
                         <outlet property="IsssLbl" destination="dzg-K8-h2L" id="L0v-sy-cD4"/>
-                        <outlet property="LangLbl" destination="s3M-QO-Kom" id="x3L-gZ-aZZ"/>
                         <outlet property="StrsLbl" destination="0WZ-UA-R8O" id="gYb-gI-iMf"/>
                         <outlet property="WchsLbl" destination="lQC-lo-IqN" id="Drg-Jv-iUh"/>
+                        <outlet property="languageLabel" destination="s3M-QO-Kom" id="x3L-gZ-aZZ"/>
                         <outlet property="titleLabel" destination="4q1-pG-WSB" id="UQ0-5D-rWe"/>
                         <outlet property="userImageView" destination="Iim-eb-8Ad" id="dmH-tP-ZuI"/>
                     </connections>
