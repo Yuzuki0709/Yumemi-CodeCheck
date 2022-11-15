@@ -1,5 +1,7 @@
 import Foundation
 import Moya
+import RxMoya
+import RxSwift
 
 protocol GitHubAPIProtocol {
     
@@ -7,8 +9,7 @@ protocol GitHubAPIProtocol {
     /// - Parameters:
     ///   - keyword: 検索するキーワード
     ///   - completion: 取得後の処理
-    func searchRepositories(keyword: String,
-                            completion: @escaping ((Result<[GitHubRepository], Error>) -> Void))
+    func searchRepositories(keyword: String) -> Observable<[GitHubRepository]>
 }
 
 final class GitHubAPI {
@@ -20,20 +21,16 @@ final class GitHubAPI {
 }
 
 extension GitHubAPI: GitHubAPIProtocol {
-    func searchRepositories(keyword: String, completion: @escaping ((Result<[GitHubRepository], Error>) -> Void)) {
-        self.provider.request(.repository(keyword: keyword)) { result in
-            switch result {
-            case .success(let response):
-                do {
-                    let searchResult = try JSONDecoder().decode(SearchResponse<GitHubRepository>.self, from: response.data)
-                    completion(.success(searchResult.items))
-                } catch {
-                    completion(.failure(error))
+    func searchRepositories(keyword: String) -> Observable<[GitHubRepository]> {
+        return self.provider.rx.request(.repository(keyword: keyword))
+            .map { response in
+                if (200..<300).contains(response.statusCode) {
+                    return try JSONDecoder().decode(SearchResponse<GitHubRepository>.self,
+                                                    from: response.data).items
                 }
                 
-            case .failure(let error):
-                completion(.failure(error))
+                throw APIClientError(statusCode: response.statusCode)
             }
-        }
+            .asObservable()
     }
 }

@@ -11,6 +11,12 @@ import Kingfisher
 
 final class RepositoryDetailViewController: UIViewController {
     
+    static func make(repository: GitHubRepository) -> RepositoryDetailViewController {
+        let view = RepositoryDetailViewController.instantiate(storyboardName: "RepositoryDetailView")
+        view.repository = repository
+        return view
+    }
+    
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var titleLabel:    UILabel!
     @IBOutlet private weak var languageLabel: UILabel!
@@ -19,7 +25,7 @@ final class RepositoryDetailViewController: UIViewController {
     @IBOutlet private weak var forksLabel:    UILabel!
     @IBOutlet private weak var issuesLabel:   UILabel!
     
-    var repository: GitHubRepository!
+    private var repository: GitHubRepository!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,3 +54,5 @@ final class RepositoryDetailViewController: UIViewController {
                                   placeholder: UIImage(systemName: "photo"))
     }
 }
+
+extension RepositoryDetailViewController: StoryboardInstantiable {}
