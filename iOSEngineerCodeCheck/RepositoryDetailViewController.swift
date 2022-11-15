@@ -42,9 +42,9 @@ final class RepositoryDetailViewController: UIViewController {
     
     private func fetchUserImage(){
         
-        guard let imageURL = URL(string: repository.owner.avatarURL) else { return }
+        guard let avatarImageURL = URL(string: repository.owner.avatarURL) else { return }
         
-        URLSession.shared.dataTask(with: imageURL) { (data, res, err) in
+        URLSession.shared.dataTask(with: avatarImageURL) { (data, res, err) in
             guard let data = data,
                   let userImage = UIImage(data: data) else { return }
             
