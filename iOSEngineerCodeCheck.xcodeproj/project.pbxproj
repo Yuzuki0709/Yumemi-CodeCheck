@@ -135,9 +135,9 @@
 		A250501A2923938A001533DF /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A250501B292393B9001533DF /* RepositorySearchView */,
-				BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */,
 				A250501829238B22001533DF /* ViewModelType.swift */,
+				A250501B292393B9001533DF /* RepositorySearchView */,
+				A250501C292393D6001533DF /* RepositoryDetailView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -149,6 +149,14 @@
 				A250501629238ACB001533DF /* RepositorySearchViewModel.swift */,
 			);
 			path = RepositorySearchView;
+			sourceTree = "<group>";
+		};
+		A250501C292393D6001533DF /* RepositoryDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */,
+			);
+			path = RepositoryDetailView;
 			sourceTree = "<group>";
 		};
 		BFD945D2244DC5E80012785A = {
