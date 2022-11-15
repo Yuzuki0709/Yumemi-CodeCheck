@@ -25,6 +25,10 @@ final class RepositorySearchViewController: UIViewController {
     private let viewModel  = RepositorySearchViewModel()
     private let disposeBag = DisposeBag()
     
+    private lazy var animationView: LottieAnimationView = {
+        return setAnimationView()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
