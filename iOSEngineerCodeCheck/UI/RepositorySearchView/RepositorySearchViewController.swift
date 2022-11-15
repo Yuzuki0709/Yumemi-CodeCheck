@@ -96,6 +96,20 @@ final class RepositorySearchViewController: UIViewController {
                 }
             .disposed(by: disposeBag)
         
+        output.repositories
+            .drive(onNext: { [weak self] repositories in
+                guard let self = self else { return }
+                
+                // 検索結果が空だったら、アニメーションを表示する
+                if repositories.isEmpty {
+                    self.playAnimation(.empty)
+                } else {
+                    self.animationView.isHidden       = true
+                    self.repositoryTableView.isHidden = false
+                }
+            })
+            .disposed(by: disposeBag)
+        
         output.searchDescription
             .drive(navigationItem.rx.title)
             .disposed(by: disposeBag)
