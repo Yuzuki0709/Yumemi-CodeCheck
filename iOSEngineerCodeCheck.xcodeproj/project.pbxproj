@@ -166,6 +166,16 @@
 			path = RepositoryDetailView;
 			sourceTree = "<group>";
 		};
+		A250502329239933001533DF /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
+				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
+				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		BFD945D2244DC5E80012785A = {
 			isa = PBXGroup;
 			children = (
@@ -189,12 +199,10 @@
 		BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */ = {
 			isa = PBXGroup;
 			children = (
+				A250502329239933001533DF /* Application */,
 				A2504FFA29236160001533DF /* Model */,
-				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
-				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				A250501A2923938A001533DF /* UI */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
-				BFD945E9244DC5EB0012785A /* LaunchScreen.storyboard */,
 				BFD945EC244DC5EB0012785A /* Info.plist */,
 			);
 			path = iOSEngineerCodeCheck;
