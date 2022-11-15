@@ -29,6 +29,7 @@
 		A250502D2923A196001533DF /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250502C2923A196001533DF /* UIColor.swift */; };
 		A25050302923AE21001533DF /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = A250502F2923AE21001533DF /* PKHUD */; };
 		A25050322923B074001533DF /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25050312923B074001533DF /* UIImageView.swift */; };
+		A25050352923B13E001533DF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A25050342923B13E001533DF /* Lottie */; };
 		BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -100,6 +101,7 @@
 				A250501129238A9B001533DF /* RxCocoa in Frameworks */,
 				A25050012923634E001533DF /* Moya in Frameworks */,
 				A25050302923AE21001533DF /* PKHUD in Frameworks */,
+				A25050352923B13E001533DF /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +285,7 @@
 				A250501229238A9B001533DF /* RxRelay */,
 				A250501429238A9B001533DF /* RxSwift */,
 				A250502F2923AE21001533DF /* PKHUD */,
+				A25050342923B13E001533DF /* Lottie */,
 			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
@@ -361,6 +364,7 @@
 				A250500A29236E98001533DF /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				A250500F29238A9B001533DF /* XCRemoteSwiftPackageReference "RxSwift" */,
 				A250502E2923AE21001533DF /* XCRemoteSwiftPackageReference "PKHUD" */,
+				A25050332923B13E001533DF /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
@@ -777,6 +781,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		A25050332923B13E001533DF /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -814,6 +826,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A250502E2923AE21001533DF /* XCRemoteSwiftPackageReference "PKHUD" */;
 			productName = PKHUD;
+		};
+		A25050342923B13E001533DF /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A25050332923B13E001533DF /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
