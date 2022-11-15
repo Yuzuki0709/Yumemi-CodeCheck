@@ -125,6 +125,14 @@ final class RepositorySearchViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        output.error
+            .drive(onNext: { [weak self] error in
+                guard let self = self else { return }
+                
+                self.displayNormalAlert(title: error.localizedDescription, message: nil)
+            })
+            .disposed(by: disposeBag)
+        
         output.isLoading
             .drive(onNext: { isLoading in
                 // ロード中はアニメーションを表示
