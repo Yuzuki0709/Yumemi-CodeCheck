@@ -75,6 +75,13 @@ extension RepositorySearchViewModel: ViewModelType {
             .bind(to: searchDescription)
             .disposed(by: disposeBag)
         
+        input.selectedRepository
+            .withLatestFrom(repositories) { indexPath, repositories in
+                return repositories[indexPath.row]
+            }
+            .bind(to: selectedRepository)
+            .disposed(by: disposeBag)
+        
         return Output(
             repositories: repositories.asDriver(),
             selectedRepository: selectedRepository.asDriver(onErrorDriveWith: .empty()),
