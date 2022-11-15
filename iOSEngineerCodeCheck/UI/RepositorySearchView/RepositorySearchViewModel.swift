@@ -22,11 +22,13 @@ extension RepositorySearchViewModel: ViewModelType {
         let repositories:       Driver<[GitHubRepository]>
         let selectedRepository: Driver<GitHubRepository>
         let searchDescription:  Driver<String>
+        let error:              Driver<Error>
         let isLoading:          Driver<Bool>
     }
     
     func transform(input: Input) -> Output {
         let repositories       = PublishRelay<[GitHubRepository]>()
+        let error              = PublishRelay<Error>()
         let selectedRepository = PublishRelay<GitHubRepository>()
         let searchDescription  = PublishRelay<String>()
         let isLoading          = BehaviorRelay<Bool>(value: false)
@@ -46,6 +48,9 @@ extension RepositorySearchViewModel: ViewModelType {
                 switch result {
                 case .next(let response):
                     repositories.accept(response)
+                    
+                case .error(let response):
+                    error.accept(response)
                     
                 default:
                     break
@@ -80,6 +85,7 @@ extension RepositorySearchViewModel: ViewModelType {
             repositories: repositories.asDriver(onErrorDriveWith: .empty()),
             selectedRepository: selectedRepository.asDriver(onErrorDriveWith: .empty()),
             searchDescription: searchDescription.asDriver(onErrorDriveWith: .empty()),
+            error: error.asDriver(onErrorDriveWith: .empty()),
             isLoading: isLoading.asDriver()
         )
     }
