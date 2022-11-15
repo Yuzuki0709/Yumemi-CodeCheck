@@ -23,6 +23,10 @@ final class RepositorySearchViewController: UIViewController {
         // Do any additional setup after loading the view.
         setSearchBar()
         bindViewModel()
+        
+        repositoryTableView.register(
+            UINib(nibName: "RepositorySearchTableViewCell", bundle: nil),
+            forCellReuseIdentifier: RepositorySearchTableViewCell.identifier)
     }
     
     private func setSearchBar() {
@@ -39,17 +43,11 @@ final class RepositorySearchViewController: UIViewController {
         let output = viewModel.transform(input: input)
         
         output.repositories
-            .drive(repositoryTableView.rx.items) { _, row, element in
-                let cell    = UITableViewCell()
-                var content = cell.defaultContentConfiguration()
-                
-                content.text = element.fullName
-                content.secondaryText = element.language ?? ""
-                cell.contentConfiguration = content
-                cell.tag = row
-                
-                return cell
-            }
+            .drive(repositoryTableView.rx.items(
+                cellIdentifier: RepositorySearchTableViewCell.identifier,
+                cellType: RepositorySearchTableViewCell.self)) { _, element, cell in
+                    cell.setup(repository: element)
+                }
             .disposed(by: disposeBag)
         
         output.searchDescription
