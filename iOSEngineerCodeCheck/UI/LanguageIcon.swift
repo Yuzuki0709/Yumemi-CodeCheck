@@ -44,4 +44,28 @@ enum LanguageIcon {
         default:            self = .other
         }
     }
+    
+    var color: UIColor {
+        switch self {
+        case .c:            return UIColor(hex: "555555")
+        case .cpp:          return UIColor(hex: "178600")
+        case .cs:           return UIColor(hex: "f34b7d")
+        case .css:          return UIColor(hex: "563d7c")
+        case .dart:         return UIColor(hex: "00b4ab")
+        case .go:           return UIColor(hex: "375eab")
+        case .html:         return UIColor(hex: "e44b23")
+        case .java:         return UIColor(hex: "b07219")
+        case .javaScript:   return UIColor(hex: "f1e05a")
+        case .kotlin:       return UIColor(hex: "ea4dfa")
+        case .objectiveC:   return UIColor(hex: "438eff")
+        case .php:          return UIColor(hex: "4f5d95")
+        case .python:       return UIColor(hex: "3572a5")
+        case .r:            return UIColor(hex: "198ce7")
+        case .ruby:         return UIColor(hex: "701516")
+        case .rust:         return UIColor(hex: "dea584")
+        case .swift:        return UIColor(hex: "ffac45")
+        case .typeScript:   return UIColor(hex: "2b7489")
+        case .other:        return UIColor(hex: "333333")
+        }
+    }
 }
