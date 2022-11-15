@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PKHUD
 
 final class RepositorySearchViewController: UIViewController {
     
@@ -63,6 +64,13 @@ final class RepositorySearchViewController: UIViewController {
                 
                 let vc = RepositoryDetailViewController.make(repository: repository)
                 self.navigationController?.pushViewController(vc, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        output.isLoading
+            .drive(onNext: { isLoading in
+                // ロード中はアニメーションを表示
+                isLoading ? HUD.show(.progress) : HUD.hide()
             })
             .disposed(by: disposeBag)
     }
