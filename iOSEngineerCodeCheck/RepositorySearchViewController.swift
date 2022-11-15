@@ -12,8 +12,8 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
     
     @IBOutlet private weak var searchBar: UISearchBar!
     
-    var repositories:   [GitHubRepository] = []
-    var selectedRepository: [String: Any]? = nil
+    var repositories:      [GitHubRepository] = []
+    var selectedRepository: GitHubRepository? = nil
     
     private let githubAPI = GitHubAPI()
     
