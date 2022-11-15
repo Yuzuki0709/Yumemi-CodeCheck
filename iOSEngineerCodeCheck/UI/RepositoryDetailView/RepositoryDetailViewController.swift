@@ -51,6 +51,8 @@ final class RepositoryDetailViewController: UITableViewController {
         forksLabel.text    = "\(repository.forksCount)"
         issuesLabel.text   = "\(repository.openIssuesCount)"
         
+        createdLabel.text  = DateHelper.shared.formatToString(date: repository.createdAt)
+        
         // 長さによって大きさを変更する
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.minimumScaleFactor = 0.5
