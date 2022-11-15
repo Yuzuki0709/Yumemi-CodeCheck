@@ -4,6 +4,7 @@ public struct GitHubRepository: Codable {
     public let id             : Int
     public let fullName       : String
     public let owner          : Owner
+    public let description    : String?
     public let stargazersCount: Int
     public let watchersCount  : Int
     public let language       : String?
@@ -14,6 +15,7 @@ public struct GitHubRepository: Codable {
         case id
         case fullName        = "full_name"
         case owner
+        case description
         case stargazersCount = "stargazers_count"
         case watchersCount   = "watchers_count"
         case language
