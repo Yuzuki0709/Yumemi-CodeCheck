@@ -59,6 +59,15 @@ final class RepositorySearchViewController: UIViewController {
         output.searchDescription
             .drive(navigationItem.rx.title)
             .disposed(by: disposeBag)
+        
+        output.selectedRepository
+            .drive(onNext: { [weak self] repository in
+                guard let self = self else { return }
+                
+                let vc = RepositoryDetailViewController.make(repository: repository)
+                self.navigationController?.pushViewController(vc, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
