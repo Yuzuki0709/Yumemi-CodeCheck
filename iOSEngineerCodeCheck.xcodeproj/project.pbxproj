@@ -25,6 +25,7 @@
 		A2505022292394E6001533DF /* RepositoryDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2505021292394E6001533DF /* RepositoryDetailView.storyboard */; };
 		A250502729239C37001533DF /* RepositorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250502529239C37001533DF /* RepositorySearchTableViewCell.swift */; };
 		A250502829239C37001533DF /* RepositorySearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A250502629239C37001533DF /* RepositorySearchTableViewCell.xib */; };
+		A250502A29239FF7001533DF /* LanguageIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250502929239FF7001533DF /* LanguageIcon.swift */; };
 		BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -65,6 +66,7 @@
 		A2505021292394E6001533DF /* RepositoryDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryDetailView.storyboard; sourceTree = "<group>"; };
 		A250502529239C37001533DF /* RepositorySearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchTableViewCell.swift; sourceTree = "<group>"; };
 		A250502629239C37001533DF /* RepositorySearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositorySearchTableViewCell.xib; sourceTree = "<group>"; };
+		A250502929239FF7001533DF /* LanguageIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageIcon.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				A250501829238B22001533DF /* ViewModelType.swift */,
 				A250501D2923940F001533DF /* StoryboardInstantiable.swift */,
+				A250502929239FF7001533DF /* LanguageIcon.swift */,
 				A250501B292393B9001533DF /* RepositorySearchView */,
 				A250501C292393D6001533DF /* RepositoryDetailView */,
 			);
@@ -390,6 +393,7 @@
 				A250501929238B22001533DF /* ViewModelType.swift in Sources */,
 				BFD945E3244DC5E80012785A /* RepositorySearchViewController.swift in Sources */,
 				A25050092923690E001533DF /* GitHubAPI.swift in Sources */,
+				A250502A29239FF7001533DF /* LanguageIcon.swift in Sources */,
 				A250500529236376001533DF /* GitHubAPITarget.swift in Sources */,
 				A2505007292367EC001533DF /* APIClientError.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */,
