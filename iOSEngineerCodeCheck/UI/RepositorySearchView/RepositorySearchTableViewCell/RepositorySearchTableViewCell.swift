@@ -23,6 +23,7 @@ class RepositorySearchTableViewCell: UITableViewCell {
     public func setup(repository: GitHubRepository) {
         userImageView.kf.setImage(with: URL(string: repository.owner.avatarURL),
                                   placeholder: UIImage(systemName: "photo"))
+        userImageView.clipCircle()
         
         titleLabel.text       = repository.fullName
         stargazersLabel.text  = "\(repository.stargazersCount)"
