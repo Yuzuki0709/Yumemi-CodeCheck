@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class RepositorySearchViewController: UIViewController {
     
@@ -14,8 +16,9 @@ final class RepositorySearchViewController: UIViewController {
     @IBOutlet private weak var repositoryTableView: UITableView!
     
     private var repositories: [GitHubRepository] = []
-    private let githubAPI = GitHubAPI()
-    private let viewModel = RepositorySearchViewModel()
+    private let githubAPI  = GitHubAPI()
+    private let viewModel  = RepositorySearchViewModel()
+    private let disposeBag = DisposeBag()
     
     var selectedRepository: GitHubRepository? = nil
     
