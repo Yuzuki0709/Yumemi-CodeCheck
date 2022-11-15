@@ -60,6 +60,21 @@ extension RepositorySearchViewModel: ViewModelType {
             })
             .disposed(by: disposeBag)
         
+        input.searchButtonTapped
+            .withLatestFrom(input.searchText) { _, searchText -> String in
+                // 前後の余計な空白を削除する
+                let descriptionWord = searchText.trimmingCharacters(in: .whitespaces)
+                
+                // 検索ワードが25文字以上なら省略する
+                if descriptionWord.count >= 25 {
+                    return "\(descriptionWord.prefix(25).description)...の検索結果"
+                }
+                
+                return "\(descriptionWord)の検索結果"
+            }
+            .bind(to: searchDescription)
+            .disposed(by: disposeBag)
+        
         return Output(
             repositories: repositories.asDriver(),
             selectedRepository: selectedRepository.asDriver(onErrorDriveWith: .empty()),
