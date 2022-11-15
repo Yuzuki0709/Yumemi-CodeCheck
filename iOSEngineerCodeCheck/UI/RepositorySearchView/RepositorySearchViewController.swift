@@ -15,6 +15,7 @@ import Lottie
 /// 検索結果に応じてアニメーションを変化させるためのEnum
 fileprivate enum SearchResultAnimation: String {
     case empty = "Empty"
+    case error = "Error"
 }
 
 final class RepositorySearchViewController: UIViewController {
