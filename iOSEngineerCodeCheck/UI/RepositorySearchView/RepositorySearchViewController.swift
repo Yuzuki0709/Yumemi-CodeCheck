@@ -11,6 +11,11 @@ import RxSwift
 import RxCocoa
 import PKHUD
 
+/// 検索結果に応じてアニメーションを変化させるためのEnum
+fileprivate enum SearchResultAnimation: String {
+    case empty = "Empty"
+}
+
 final class RepositorySearchViewController: UIViewController {
     
     @IBOutlet private weak var searchBar: UISearchBar!
