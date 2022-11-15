@@ -15,6 +15,9 @@
 		A2505007292367EC001533DF /* APIClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2505006292367EC001533DF /* APIClientError.swift */; };
 		A25050092923690E001533DF /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25050082923690E001533DF /* GitHubAPI.swift */; };
 		A250500C29236E98001533DF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A250500B29236E98001533DF /* Kingfisher */; };
+		A250501129238A9B001533DF /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = A250501029238A9B001533DF /* RxCocoa */; };
+		A250501329238A9B001533DF /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = A250501229238A9B001533DF /* RxRelay */; };
+		A250501529238A9B001533DF /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A250501429238A9B001533DF /* RxSwift */; };
 		BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -71,8 +74,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A250501529238A9B001533DF /* RxSwift in Frameworks */,
+				A250501329238A9B001533DF /* RxRelay in Frameworks */,
 				A250500C29236E98001533DF /* Kingfisher in Frameworks */,
 				A25050032923634E001533DF /* RxMoya in Frameworks */,
+				A250501129238A9B001533DF /* RxCocoa in Frameworks */,
 				A25050012923634E001533DF /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,6 +202,9 @@
 				A25050002923634E001533DF /* Moya */,
 				A25050022923634E001533DF /* RxMoya */,
 				A250500B29236E98001533DF /* Kingfisher */,
+				A250501029238A9B001533DF /* RxCocoa */,
+				A250501229238A9B001533DF /* RxRelay */,
+				A250501429238A9B001533DF /* RxSwift */,
 			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
@@ -272,6 +281,7 @@
 			packageReferences = (
 				A2504FFF2923634E001533DF /* XCRemoteSwiftPackageReference "Moya" */,
 				A250500A29236E98001533DF /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				A250500F29238A9B001533DF /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
@@ -671,6 +681,14 @@
 				kind = branch;
 			};
 		};
+		A250500F29238A9B001533DF /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -688,6 +706,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A250500A29236E98001533DF /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		A250501029238A9B001533DF /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A250500F29238A9B001533DF /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		A250501229238A9B001533DF /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A250500F29238A9B001533DF /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		A250501429238A9B001533DF /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A250500F29238A9B001533DF /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
