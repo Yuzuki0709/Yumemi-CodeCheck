@@ -48,3 +48,5 @@ final class RepositoryDetailViewController: UIViewController {
                                   placeholder: UIImage(systemName: "photo"))
     }
 }
+
+extension RepositoryDetailViewController: StoryboardInstantiable {}
