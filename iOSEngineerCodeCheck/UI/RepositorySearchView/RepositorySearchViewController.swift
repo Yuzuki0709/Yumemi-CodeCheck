@@ -42,6 +42,13 @@ final class RepositorySearchViewController: UIViewController {
         repositoryTableView.register(
             UINib(nibName: "RepositorySearchTableViewCell", bundle: nil),
             forCellReuseIdentifier: RepositorySearchTableViewCell.identifier)
+        
+        // セルがタップされた後に、選択状態を解除する
+        repositoryTableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                self?.repositoryTableView.deselectRow(at: indexPath, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func bindViewModel() {
