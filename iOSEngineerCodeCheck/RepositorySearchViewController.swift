@@ -15,6 +15,8 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
     var repositories:      [[String: Any]] = []
     var selectedRepository: [String: Any]? = nil
     
+    var temp: [GitHubRepository] = []
+    
     private let githubAPI = GitHubAPI()
     
     override func viewDidLoad() {
@@ -29,23 +31,18 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
         guard let searchWord = searchBar.text,
               !searchWord.isEmpty else { return }
         
-        let githubAPIURLString = "https://api.github.com/search/repositories?q=\(searchWord)"
-        guard let githubAPIURL = URL(string: githubAPIURLString) else { return }
-        
-        URLSession.shared.dataTask(with: githubAPIURL) { (data, res, err) in
+        githubAPI.searchRepositories(keyword: searchWord) { [weak self] result in
+            guard let self = self else { return }
             
-            guard let data = data,
-                  let obj   = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-                  let items = obj["items"] as? [[String: Any]] else { return }
-            
-            self.repositories = items
-            
-            DispatchQueue.main.async {
-                // これ呼ばなきゃリストが更新されません
+            switch result {
+            case .success(let repositories):
+                self.temp = repositories
                 self.tableView.reloadData()
+                
+            case .failure(let error):
+                print(error)
             }
         }
-        .resume()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
