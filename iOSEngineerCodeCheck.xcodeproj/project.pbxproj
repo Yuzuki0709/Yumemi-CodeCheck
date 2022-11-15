@@ -97,13 +97,21 @@
 		A2504FFA29236160001533DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A2504FFB29236188001533DF /* GitHubRepository.swift */,
-				A2504FFD292362C0001533DF /* SearchResponse.swift */,
+				A250500D29237045001533DF /* Response */,
 				A250500429236376001533DF /* GitHubAPITarget.swift */,
 				A2505006292367EC001533DF /* APIClientError.swift */,
 				A25050082923690E001533DF /* GitHubAPI.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A250500D29237045001533DF /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				A2504FFD292362C0001533DF /* SearchResponse.swift */,
+				A2504FFB29236188001533DF /* GitHubRepository.swift */,
+			);
+			path = Response;
 			sourceTree = "<group>";
 		};
 		BFD945D2244DC5E80012785A = {
