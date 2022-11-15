@@ -27,13 +27,11 @@ extension RepositorySearchViewModel: ViewModelType {
     }
     
     func transform(input: Input) -> Output {
-        let repositories       = PublishRelay<[GitHubRepository]>()
-        let error              = PublishRelay<Error>()
         let selectedRepository = PublishRelay<GitHubRepository>()
         let searchDescription  = PublishRelay<String>()
         let isLoading          = BehaviorRelay<Bool>(value: false)
         
-        input.searchButtonTapped
+        let response = input.searchButtonTapped
             .withLatestFrom(input.searchText)
             .flatMapLatest { [unowned self] searchText -> Observable<Event<[GitHubRepository]>> in
                 isLoading.accept(true)
@@ -42,22 +40,16 @@ extension RepositorySearchViewModel: ViewModelType {
                     .searchRepositories(keyword: searchText)
                     .materialize()
             }
-            .subscribe(onNext: { result in
+            .share()
+        
+        response
+            .subscribe(onNext: { _ in
                 isLoading.accept(false)
-                
-                switch result {
-                case .next(let response):
-                    repositories.accept(response)
-                    
-                case .error(let response):
-                    error.accept(response)
-                    
-                default:
-                    break
-                }
-                
             })
             .disposed(by: disposeBag)
+        
+        let repositories = response.elements()
+        let error        = response.errors()
         
         input.searchButtonTapped
             .withLatestFrom(input.searchText) { _, searchText -> String in
