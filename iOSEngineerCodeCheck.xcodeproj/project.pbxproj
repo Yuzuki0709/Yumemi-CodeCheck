@@ -217,6 +217,13 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		A250503B29244944001533DF /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		BFD945D2244DC5E80012785A = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +249,7 @@
 			children = (
 				A250502329239933001533DF /* Application */,
 				A250502B2923A169001533DF /* Extension */,
+				A250503B29244944001533DF /* Helper */,
 				A2504FFA29236160001533DF /* Model */,
 				A250501A2923938A001533DF /* UI */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
