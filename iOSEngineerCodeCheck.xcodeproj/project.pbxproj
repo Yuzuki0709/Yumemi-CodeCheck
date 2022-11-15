@@ -14,6 +14,7 @@
 		A250500529236376001533DF /* GitHubAPITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250500429236376001533DF /* GitHubAPITarget.swift */; };
 		A2505007292367EC001533DF /* APIClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2505006292367EC001533DF /* APIClientError.swift */; };
 		A25050092923690E001533DF /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25050082923690E001533DF /* GitHubAPI.swift */; };
+		A250500C29236E98001533DF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A250500B29236E98001533DF /* Kingfisher */; };
 		BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A250500C29236E98001533DF /* Kingfisher in Frameworks */,
 				A25050032923634E001533DF /* RxMoya in Frameworks */,
 				A25050012923634E001533DF /* Moya in Frameworks */,
 			);
@@ -177,6 +179,7 @@
 			packageProductDependencies = (
 				A25050002923634E001533DF /* Moya */,
 				A25050022923634E001533DF /* RxMoya */,
+				A250500B29236E98001533DF /* Kingfisher */,
 			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
@@ -252,6 +255,7 @@
 			mainGroup = BFD945D2244DC5E80012785A;
 			packageReferences = (
 				A2504FFF2923634E001533DF /* XCRemoteSwiftPackageReference "Moya" */,
+				A250500A29236E98001533DF /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
@@ -643,6 +647,14 @@
 				kind = branch;
 			};
 		};
+		A250500A29236E98001533DF /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -655,6 +667,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A2504FFF2923634E001533DF /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = RxMoya;
+		};
+		A250500B29236E98001533DF /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A250500A29236E98001533DF /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
