@@ -45,11 +45,11 @@ final class RepositoryDetailViewController: UITableViewController {
     
     private func setLabels() {
         titleLabel.text    = repository.fullName
-        languageLabel.text = "Written in \(repository.language ?? "")"
-        starsLabel.text    = "\(repository.stargazersCount) stars"
-        watchersLabel.text = "\(repository.watchersCount) watchers"
-        forksLabel.text    = "\(repository.forksCount) forks"
-        issuesLabel.text   = "\(repository.openIssuesCount) open issues"
+        languageLabel.text = repository.language
+        starsLabel.text    = "\(repository.stargazersCount)"
+        watchersLabel.text = "\(repository.watchersCount)"
+        forksLabel.text    = "\(repository.forksCount)"
+        issuesLabel.text   = "\(repository.openIssuesCount)"
         
         // 長さによって大きさを変更する
         titleLabel.adjustsFontSizeToFitWidth = true
