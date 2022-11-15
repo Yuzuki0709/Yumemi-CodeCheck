@@ -29,6 +29,37 @@ extension RepositorySearchViewModel: ViewModelType {
         let selectedRepository = PublishRelay<GitHubRepository>()
         let searchDescription  = PublishRelay<String>()
         
+        input.searchButtonTapped
+            .withLatestFrom(input.searchText)
+            .flatMapLatest { [unowned self] searchText -> Observable<Event<[GitHubRepository]>> in
+                
+                var repositories: [GitHubRepository] = []
+                
+                self.githubAPI.searchRepositories(keyword: searchText) { result in
+                    
+                    switch result {
+                    case .success(let response):
+                        repositories = response
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+                
+                return Observable.just(repositories)
+                    .materialize()
+            }
+            .subscribe(onNext: { result in
+                switch result {
+                case .next(let response):
+                    repositories.accept(response)
+                    
+                default:
+                    break
+                }
+                
+            })
+            .disposed(by: disposeBag)
+        
         return Output(
             repositories: repositories.asDriver(),
             selectedRepository: selectedRepository.asDriver(onErrorDriveWith: .empty()),
