@@ -19,3 +19,14 @@ enum APIClientError: Error {
         }
     }
 }
+
+extension APIClientError: LocalizedError {
+    var errorDescription: String? {
+        switch self {
+        case .requestError:     return "リクエストエラー"
+        case .serverError:      return "サーバーエラー"
+        case .maintenanceError: return "メンテナンスエラー"
+        case .unknown:          return "不明なエラー"
+        }
+    }
+}
