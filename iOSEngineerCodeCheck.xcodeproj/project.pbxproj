@@ -20,6 +20,7 @@
 		A250501529238A9B001533DF /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = A250501429238A9B001533DF /* RxSwift */; };
 		A250501729238ACB001533DF /* RepositorySearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250501629238ACB001533DF /* RepositorySearchViewModel.swift */; };
 		A250501929238B22001533DF /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250501829238B22001533DF /* ViewModelType.swift */; };
+		A250501E2923940F001533DF /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250501D2923940F001533DF /* StoryboardInstantiable.swift */; };
 		BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -56,6 +57,7 @@
 		A25050082923690E001533DF /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
 		A250501629238ACB001533DF /* RepositorySearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchViewModel.swift; sourceTree = "<group>"; };
 		A250501829238B22001533DF /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		A250501D2923940F001533DF /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				A250501829238B22001533DF /* ViewModelType.swift */,
+				A250501D2923940F001533DF /* StoryboardInstantiable.swift */,
 				A250501B292393B9001533DF /* RepositorySearchView */,
 				A250501C292393D6001533DF /* RepositoryDetailView */,
 			);
@@ -366,6 +369,7 @@
 				A250501729238ACB001533DF /* RepositorySearchViewModel.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				A2504FFC29236188001533DF /* GitHubRepository.swift in Sources */,
+				A250501E2923940F001533DF /* StoryboardInstantiable.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
