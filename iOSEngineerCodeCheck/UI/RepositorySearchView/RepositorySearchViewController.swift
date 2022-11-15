@@ -69,13 +69,4 @@ final class RepositorySearchViewController: UIViewController {
             })
             .disposed(by: disposeBag)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.identifier == "Detail"{
-            let detailVC = segue.destination as! RepositoryDetailViewController
-            detailVC.repository = selectedRepository!
-        }
-        
-    }
 }
