@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class RepositoryDetailViewController: UIViewController {
     
@@ -40,18 +41,10 @@ final class RepositoryDetailViewController: UIViewController {
         titleLabel.minimumScaleFactor = 0.5
     }
     
+    
     private func fetchUserImage(){
         
-        guard let avatarImageURL = URL(string: repository.owner.avatarURL) else { return }
-        
-        URLSession.shared.dataTask(with: avatarImageURL) { (data, res, err) in
-            guard let data = data,
-                  let avatarImage = UIImage(data: data) else { return }
-            
-            DispatchQueue.main.async {
-                self.userImageView.image = avatarImage
-            }
-        }
-        .resume()
+        userImageView.kf.setImage(with: URL(string: repository.owner.avatarURL),
+                                  placeholder: UIImage(systemName: "photo"))
     }
 }
