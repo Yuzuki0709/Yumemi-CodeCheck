@@ -52,6 +52,7 @@ final class RepositoryDetailViewController: UITableViewController {
         issuesLabel.text   = "\(repository.openIssuesCount)"
         
         createdLabel.text  = DateHelper.shared.formatToString(date: repository.createdAt)
+        updatedLabel.text  = DateHelper.shared.formatToString(date: repository.updatedAt)
         
         // 長さによって大きさを変更する
         titleLabel.adjustsFontSizeToFitWidth = true
