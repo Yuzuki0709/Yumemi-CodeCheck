@@ -26,7 +26,7 @@ extension RepositorySearchViewModel: ViewModelType {
     }
     
     func transform(input: Input) -> Output {
-        let repositories       = BehaviorRelay<[GitHubRepository]>(value: [])
+        let repositories       = PublishRelay<[GitHubRepository]>()
         let selectedRepository = PublishRelay<GitHubRepository>()
         let searchDescription  = PublishRelay<String>()
         let isLoading          = BehaviorRelay<Bool>(value: false)
@@ -77,7 +77,7 @@ extension RepositorySearchViewModel: ViewModelType {
             .disposed(by: disposeBag)
         
         return Output(
-            repositories: repositories.asDriver(),
+            repositories: repositories.asDriver(onErrorDriveWith: .empty()),
             selectedRepository: selectedRepository.asDriver(onErrorDriveWith: .empty()),
             searchDescription: searchDescription.asDriver(onErrorDriveWith: .empty()),
             isLoading: isLoading.asDriver()
