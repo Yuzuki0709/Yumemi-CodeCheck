@@ -18,6 +18,8 @@ class RepositorySearchTableViewCell: UITableViewCell {
     @IBOutlet private weak var stargazersLabel:  UILabel!
     @IBOutlet private weak var languageLabel:    UILabel!
     
+    static let identifier = "RepositorySearchTableViewCell"
+    
     public func setup(repository: GitHubRepository) {
         userImageView.kf.setImage(with: URL(string: repository.owner.avatarURL),
                                   placeholder: UIImage(systemName: "photo"))
