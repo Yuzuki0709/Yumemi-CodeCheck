@@ -30,6 +30,8 @@ final class RepositorySearchViewController: UIViewController {
         return setAnimationView()
     }()
     
+    // MARK: - Lifecycle Method
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -37,7 +39,11 @@ final class RepositorySearchViewController: UIViewController {
         setTableView()
         bindViewModel()
     }
-    
+}
+
+// MARK: - Initialized Method
+
+extension RepositorySearchViewController {
     private func setSearchBar() {
         searchBar.placeholder = "GitHubのリポジトリを検索できるよー"
         
@@ -95,12 +101,11 @@ final class RepositorySearchViewController: UIViewController {
                 cellType: RepositorySearchTableViewCell.self)) { _, element, cell in
                     cell.setup(repository: element)
                 }
-            .disposed(by: disposeBag)
+                .disposed(by: disposeBag)
         
         output.repositories
             .drive(onNext: { [weak self] repositories in
                 guard let self = self else { return }
-                
                 // 検索結果が空だったら、アニメーションとアラートを表示する
                 if repositories.isEmpty {
                     self.playAnimation(.empty)
@@ -129,7 +134,6 @@ final class RepositorySearchViewController: UIViewController {
         output.error
             .drive(onNext: { [weak self] error in
                 guard let self = self else { return }
-                
                 // エラーだったら、アニメーションとアラートを表示する
                 self.playAnimation(.error)
                 self.displayNormalAlert(title: error.localizedDescription, message: nil)
@@ -143,7 +147,11 @@ final class RepositorySearchViewController: UIViewController {
             })
             .disposed(by: disposeBag)
     }
-    
+}
+
+// MARK: - Private Method
+
+extension RepositorySearchViewController {
     private func playAnimation(_ result: SearchResultAnimation) {
         animationView.animation = LottieAnimation.named(result.rawValue)
         animationView.isHidden  = false
