@@ -15,6 +15,8 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
     var repositories:      [[String: Any]] = []
     var selectedRepository: [String: Any]? = nil
     
+    private let githubAPI = GitHubAPI()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
