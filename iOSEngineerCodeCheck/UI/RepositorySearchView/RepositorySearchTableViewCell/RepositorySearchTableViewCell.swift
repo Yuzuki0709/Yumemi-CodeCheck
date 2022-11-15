@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RepositorySearchTableViewCell: UITableViewCell {
     
@@ -16,6 +17,23 @@ class RepositorySearchTableViewCell: UITableViewCell {
     @IBOutlet private weak var descriptionLabel: UILabel!
     @IBOutlet private weak var stargazersLabel:  UILabel!
     @IBOutlet private weak var languageLabel:    UILabel!
+    
+    public func setup(repository: GitHubRepository) {
+        userImageView.kf.setImage(with: URL(string: repository.owner.avatarURL),
+                                  placeholder: UIImage(systemName: "photo"))
+        
+        titleLabel.text       = repository.fullName
+        stargazersLabel.text  = "\(repository.stargazersCount)"
+        descriptionLabel.text = repository.description
+        
+        if let language = repository.language {
+            languageLabel.text = language
+            languageIcon.isHidden = false
+        } else {
+            languageLabel.text = ""
+            languageIcon.isHidden = true
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
