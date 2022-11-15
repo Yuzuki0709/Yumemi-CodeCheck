@@ -106,7 +106,6 @@
             <viewLayoutGuide key="safeArea" id="Qws-WA-lTx"/>
             <connections>
                 <outlet property="descriptionLabel" destination="0I1-1S-APN" id="v7b-BQ-MJi"/>
-                <outlet property="goDetailButton" destination="xgb-D6-kWH" id="CjB-wU-62E"/>
                 <outlet property="languageIcon" destination="dV6-hw-Dlf" id="kXR-nR-7Ad"/>
                 <outlet property="languageLabel" destination="rZK-12-1ye" id="UrN-59-afE"/>
                 <outlet property="stargazersLabel" destination="Hsy-ru-V8D" id="QbE-5e-fEY"/>

@@ -9,6 +9,13 @@
 import UIKit
 
 class RepositorySearchTableViewCell: UITableViewCell {
+    
+    @IBOutlet private weak var userImageView:    UIImageView!
+    @IBOutlet private weak var languageIcon:     UIImageView!
+    @IBOutlet private weak var titleLabel:       UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var stargazersLabel:  UILabel!
+    @IBOutlet private weak var languageLabel:    UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
