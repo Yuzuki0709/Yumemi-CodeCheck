@@ -15,6 +15,7 @@ final class RepositorySearchViewController: UIViewController {
     
     private var repositories: [GitHubRepository] = []
     private let githubAPI = GitHubAPI()
+    private let viewModel = RepositorySearchViewModel()
     
     var selectedRepository: GitHubRepository? = nil
     
