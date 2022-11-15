@@ -10,6 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import PKHUD
+import Lottie
 
 /// 検索結果に応じてアニメーションを変化させるためのEnum
 fileprivate enum SearchResultAnimation: String {
@@ -54,6 +55,24 @@ final class RepositorySearchViewController: UIViewController {
                 self?.repositoryTableView.deselectRow(at: indexPath, animated: true)
             })
             .disposed(by: disposeBag)
+    }
+    
+    private func setAnimationView() -> LottieAnimationView {
+        let animationView = LottieAnimationView()
+        
+        animationView.frame = CGRect(x: 0,
+                                     y: repositoryTableView.bounds.minY,
+                                     width: view.bounds.width,
+                                     height: repositoryTableView.bounds.height)
+        
+        animationView.center         = repositoryTableView.center
+        animationView.loopMode       = .loop
+        animationView.contentMode    = .scaleAspectFit
+        animationView.animationSpeed = 1
+        
+        view.addSubview(animationView)
+        
+        return animationView
     }
     
     private func bindViewModel() {
