@@ -7,7 +7,8 @@ protocol GitHubAPIProtocol {
     /// - Parameters:
     ///   - keyword: 検索するキーワード
     ///   - completion: 取得後の処理
-    func searchRepositories(keyword: String, completion: @escaping (([GitHubRepository]) -> Void))
+    func searchRepositories(keyword: String,
+                            completion: @escaping ((Result<[GitHubRepository], Error>) -> Void))
 }
 
 final class GitHubAPI {
