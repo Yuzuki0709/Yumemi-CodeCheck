@@ -150,6 +150,7 @@
 		A250501B292393B9001533DF /* RepositorySearchView */ = {
 			isa = PBXGroup;
 			children = (
+				A250502429239BDD001533DF /* RepositorySearchTableViewCell */,
 				BFD945E2244DC5E80012785A /* RepositorySearchViewController.swift */,
 				A250501629238ACB001533DF /* RepositorySearchViewModel.swift */,
 				A250501F292394A9001533DF /* RepositorySearchView.storyboard */,
@@ -174,6 +175,13 @@
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		A250502429239BDD001533DF /* RepositorySearchTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RepositorySearchTableViewCell;
 			sourceTree = "<group>";
 		};
 		BFD945D2244DC5E80012785A = {
