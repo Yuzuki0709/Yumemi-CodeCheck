@@ -31,7 +31,6 @@ final class RepositorySearchViewController: UIViewController {
     
     private func setSearchBar() {
         searchBar.placeholder = "GitHubのリポジトリを検索できるよー"
-        searchBar.delegate = self
     }
     
     private func bindViewModel() {
@@ -69,27 +68,5 @@ final class RepositorySearchViewController: UIViewController {
             detailVC.repository = selectedRepository!
         }
         
-    }
-}
-
-extension RepositorySearchViewController: UISearchBarDelegate {
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-
-        guard let searchWord = searchBar.text,
-              !searchWord.isEmpty else { return }
-
-        githubAPI.searchRepositories(keyword: searchWord) { [weak self] result in
-            guard let self = self else { return }
-
-            switch result {
-            case .success(let repositories):
-                self.repositories = repositories
-                self.repositoryTableView.reloadData()
-
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
 }
