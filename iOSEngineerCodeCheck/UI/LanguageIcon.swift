@@ -26,6 +26,7 @@ enum LanguageIcon {
         case "C":           self = .c
         case "C++":         self = .cpp
         case "C#":          self = .cs
+        case "CSS":         self = .css
         case "Dart":        self = .dart
         case "Go":          self = .go
         case "HTML":        self = .html
