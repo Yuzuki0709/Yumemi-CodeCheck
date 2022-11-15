@@ -29,6 +29,13 @@ final class RepositorySearchViewController: UIViewController {
     
     private func setSearchBar() {
         searchBar.placeholder = "GitHubのリポジトリを検索できるよー"
+        
+        // 検索ボタンが押されたときに、キーボードを閉じる
+        searchBar.rx.searchButtonClicked
+            .subscribe(onNext: { [weak self] in
+                self?.searchBar.resignFirstResponder()
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setTableView() {
