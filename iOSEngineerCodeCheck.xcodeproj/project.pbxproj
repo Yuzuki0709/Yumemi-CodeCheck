@@ -30,6 +30,7 @@
 		A25050302923AE21001533DF /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = A250502F2923AE21001533DF /* PKHUD */; };
 		A25050322923B074001533DF /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25050312923B074001533DF /* UIImageView.swift */; };
 		A25050352923B13E001533DF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A25050342923B13E001533DF /* Lottie */; };
+		A25050372923B70E001533DF /* AlertDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25050362923B70E001533DF /* AlertDisplaying.swift */; };
 		BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -73,6 +74,7 @@
 		A250502929239FF7001533DF /* LanguageIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageIcon.swift; sourceTree = "<group>"; };
 		A250502C2923A196001533DF /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		A25050312923B074001533DF /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		A25050362923B70E001533DF /* AlertDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplaying.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		A250501A2923938A001533DF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A25050362923B70E001533DF /* AlertDisplaying.swift */,
 				A250501829238B22001533DF /* ViewModelType.swift */,
 				A250501D2923940F001533DF /* StoryboardInstantiable.swift */,
 				A250502929239FF7001533DF /* LanguageIcon.swift */,
@@ -411,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25050372923B70E001533DF /* AlertDisplaying.swift in Sources */,
 				A250502729239C37001533DF /* RepositorySearchTableViewCell.swift in Sources */,
 				A250501929238B22001533DF /* ViewModelType.swift in Sources */,
 				BFD945E3244DC5E80012785A /* RepositorySearchViewController.swift in Sources */,
