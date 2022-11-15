@@ -22,15 +22,18 @@ final class RepositorySearchViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setSearchBar()
+        setTableView()
         bindViewModel()
-        
-        repositoryTableView.register(
-            UINib(nibName: "RepositorySearchTableViewCell", bundle: nil),
-            forCellReuseIdentifier: RepositorySearchTableViewCell.identifier)
     }
     
     private func setSearchBar() {
         searchBar.placeholder = "GitHubのリポジトリを検索できるよー"
+    }
+    
+    private func setTableView() {
+        repositoryTableView.register(
+            UINib(nibName: "RepositorySearchTableViewCell", bundle: nil),
+            forCellReuseIdentifier: RepositorySearchTableViewCell.identifier)
     }
     
     private func bindViewModel() {
