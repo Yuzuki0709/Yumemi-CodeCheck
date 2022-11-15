@@ -97,10 +97,10 @@
 		A2504FFA29236160001533DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				A250500D29237045001533DF /* Response */,
 				A250500429236376001533DF /* GitHubAPITarget.swift */,
-				A2505006292367EC001533DF /* APIClientError.swift */,
 				A25050082923690E001533DF /* GitHubAPI.swift */,
+				A250500E29237067001533DF /* Error */,
+				A250500D29237045001533DF /* Response */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -112,6 +112,14 @@
 				A2504FFB29236188001533DF /* GitHubRepository.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		A250500E29237067001533DF /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				A2505006292367EC001533DF /* APIClientError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		BFD945D2244DC5E80012785A = {
