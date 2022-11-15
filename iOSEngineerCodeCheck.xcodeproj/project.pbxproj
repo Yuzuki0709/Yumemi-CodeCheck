@@ -23,6 +23,15 @@
 		A250501E2923940F001533DF /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250501D2923940F001533DF /* StoryboardInstantiable.swift */; };
 		A2505020292394A9001533DF /* RepositorySearchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A250501F292394A9001533DF /* RepositorySearchView.storyboard */; };
 		A2505022292394E6001533DF /* RepositoryDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2505021292394E6001533DF /* RepositoryDetailView.storyboard */; };
+		A250502729239C37001533DF /* RepositorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250502529239C37001533DF /* RepositorySearchTableViewCell.swift */; };
+		A250502829239C37001533DF /* RepositorySearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A250502629239C37001533DF /* RepositorySearchTableViewCell.xib */; };
+		A250502A29239FF7001533DF /* LanguageIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250502929239FF7001533DF /* LanguageIcon.swift */; };
+		A250502D2923A196001533DF /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250502C2923A196001533DF /* UIColor.swift */; };
+		A25050302923AE21001533DF /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = A250502F2923AE21001533DF /* PKHUD */; };
+		A25050322923B074001533DF /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25050312923B074001533DF /* UIImageView.swift */; };
+		A25050352923B13E001533DF /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A25050342923B13E001533DF /* Lottie */; };
+		A25050372923B70E001533DF /* AlertDisplaying.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25050362923B70E001533DF /* AlertDisplaying.swift */; };
+		A25050392923B8FE001533DF /* RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25050382923B8FE001533DF /* RxSwift.swift */; };
 		BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -61,6 +70,14 @@
 		A250501D2923940F001533DF /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		A250501F292394A9001533DF /* RepositorySearchView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositorySearchView.storyboard; sourceTree = "<group>"; };
 		A2505021292394E6001533DF /* RepositoryDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RepositoryDetailView.storyboard; sourceTree = "<group>"; };
+		A250502529239C37001533DF /* RepositorySearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchTableViewCell.swift; sourceTree = "<group>"; };
+		A250502629239C37001533DF /* RepositorySearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositorySearchTableViewCell.xib; sourceTree = "<group>"; };
+		A250502929239FF7001533DF /* LanguageIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageIcon.swift; sourceTree = "<group>"; };
+		A250502C2923A196001533DF /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		A25050312923B074001533DF /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		A25050362923B70E001533DF /* AlertDisplaying.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDisplaying.swift; sourceTree = "<group>"; };
+		A25050382923B8FE001533DF /* RxSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxSwift.swift; sourceTree = "<group>"; };
+		A250503A29243ADB001533DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +105,8 @@
 				A25050032923634E001533DF /* RxMoya in Frameworks */,
 				A250501129238A9B001533DF /* RxCocoa in Frameworks */,
 				A25050012923634E001533DF /* Moya in Frameworks */,
+				A25050302923AE21001533DF /* PKHUD in Frameworks */,
+				A25050352923B13E001533DF /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +158,10 @@
 		A250501A2923938A001533DF /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A25050362923B70E001533DF /* AlertDisplaying.swift */,
 				A250501829238B22001533DF /* ViewModelType.swift */,
 				A250501D2923940F001533DF /* StoryboardInstantiable.swift */,
+				A250502929239FF7001533DF /* LanguageIcon.swift */,
 				A250501B292393B9001533DF /* RepositorySearchView */,
 				A250501C292393D6001533DF /* RepositoryDetailView */,
 			);
@@ -153,6 +174,7 @@
 				BFD945E2244DC5E80012785A /* RepositorySearchViewController.swift */,
 				A250501629238ACB001533DF /* RepositorySearchViewModel.swift */,
 				A250501F292394A9001533DF /* RepositorySearchView.storyboard */,
+				A250502429239BDD001533DF /* RepositorySearchTableViewCell */,
 			);
 			path = RepositorySearchView;
 			sourceTree = "<group>";
@@ -174,6 +196,25 @@
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		A250502429239BDD001533DF /* RepositorySearchTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A250502529239C37001533DF /* RepositorySearchTableViewCell.swift */,
+				A250502629239C37001533DF /* RepositorySearchTableViewCell.xib */,
+			);
+			path = RepositorySearchTableViewCell;
+			sourceTree = "<group>";
+		};
+		A250502B2923A169001533DF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A250502C2923A196001533DF /* UIColor.swift */,
+				A25050312923B074001533DF /* UIImageView.swift */,
+				A25050382923B8FE001533DF /* RxSwift.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		BFD945D2244DC5E80012785A = {
@@ -200,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				A250502329239933001533DF /* Application */,
+				A250502B2923A169001533DF /* Extension */,
 				A2504FFA29236160001533DF /* Model */,
 				A250501A2923938A001533DF /* UI */,
 				BFD945E7244DC5EB0012785A /* Assets.xcassets */,
@@ -249,6 +291,8 @@
 				A250501029238A9B001533DF /* RxCocoa */,
 				A250501229238A9B001533DF /* RxRelay */,
 				A250501429238A9B001533DF /* RxSwift */,
+				A250502F2923AE21001533DF /* PKHUD */,
+				A25050342923B13E001533DF /* Lottie */,
 			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
@@ -320,12 +364,15 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = BFD945D2244DC5E80012785A;
 			packageReferences = (
 				A2504FFF2923634E001533DF /* XCRemoteSwiftPackageReference "Moya" */,
 				A250500A29236E98001533DF /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				A250500F29238A9B001533DF /* XCRemoteSwiftPackageReference "RxSwift" */,
+				A250502E2923AE21001533DF /* XCRemoteSwiftPackageReference "PKHUD" */,
+				A25050332923B13E001533DF /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
@@ -345,6 +392,7 @@
 			files = (
 				A2505022292394E6001533DF /* RepositoryDetailView.storyboard in Resources */,
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
+				A250502829239C37001533DF /* RepositorySearchTableViewCell.xib in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
 				A2505020292394A9001533DF /* RepositorySearchView.storyboard in Resources */,
 			);
@@ -371,16 +419,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25050372923B70E001533DF /* AlertDisplaying.swift in Sources */,
+				A250502729239C37001533DF /* RepositorySearchTableViewCell.swift in Sources */,
 				A250501929238B22001533DF /* ViewModelType.swift in Sources */,
 				BFD945E3244DC5E80012785A /* RepositorySearchViewController.swift in Sources */,
 				A25050092923690E001533DF /* GitHubAPI.swift in Sources */,
+				A250502D2923A196001533DF /* UIColor.swift in Sources */,
+				A250502A29239FF7001533DF /* LanguageIcon.swift in Sources */,
 				A250500529236376001533DF /* GitHubAPITarget.swift in Sources */,
 				A2505007292367EC001533DF /* APIClientError.swift in Sources */,
+				A25050322923B074001533DF /* UIImageView.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */,
 				A2504FFE292362C1001533DF /* SearchResponse.swift in Sources */,
 				A250501729238ACB001533DF /* RepositorySearchViewModel.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
 				A2504FFC29236188001533DF /* GitHubRepository.swift in Sources */,
+				A25050392923B8FE001533DF /* RxSwift.swift in Sources */,
 				A250501E2923940F001533DF /* StoryboardInstantiable.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 			);
@@ -422,6 +476,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				BFD945EA244DC5EB0012785A /* Base */,
+				A250503A29243ADB001533DF /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -433,6 +488,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -494,6 +550,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -729,6 +786,22 @@
 				kind = branch;
 			};
 		};
+		A250502E2923AE21001533DF /* XCRemoteSwiftPackageReference "PKHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pkluz/PKHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		A25050332923B13E001533DF /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -761,6 +834,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A250500F29238A9B001533DF /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		A250502F2923AE21001533DF /* PKHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A250502E2923AE21001533DF /* XCRemoteSwiftPackageReference "PKHUD" */;
+			productName = PKHUD;
+		};
+		A25050342923B13E001533DF /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A25050332923B13E001533DF /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

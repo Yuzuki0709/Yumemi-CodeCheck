@@ -22,32 +22,34 @@ extension RepositorySearchViewModel: ViewModelType {
         let repositories:       Driver<[GitHubRepository]>
         let selectedRepository: Driver<GitHubRepository>
         let searchDescription:  Driver<String>
+        let error:              Driver<Error>
+        let isLoading:          Driver<Bool>
     }
     
     func transform(input: Input) -> Output {
-        let repositories       = BehaviorRelay<[GitHubRepository]>(value: [])
         let selectedRepository = PublishRelay<GitHubRepository>()
         let searchDescription  = PublishRelay<String>()
+        let isLoading          = BehaviorRelay<Bool>(value: false)
         
-        input.searchButtonTapped
+        let response = input.searchButtonTapped
             .withLatestFrom(input.searchText)
             .flatMapLatest { [unowned self] searchText -> Observable<Event<[GitHubRepository]>> in
+                isLoading.accept(true)
                 
-                self.githubAPI
+                return self.githubAPI
                     .searchRepositories(keyword: searchText)
                     .materialize()
             }
-            .subscribe(onNext: { result in
-                switch result {
-                case .next(let response):
-                    repositories.accept(response)
-                    
-                default:
-                    break
-                }
-                
+            .share()
+        
+        response
+            .subscribe(onNext: { _ in
+                isLoading.accept(false)
             })
             .disposed(by: disposeBag)
+        
+        let repositories = response.elements()
+        let error        = response.errors()
         
         input.searchButtonTapped
             .withLatestFrom(input.searchText) { _, searchText -> String in
@@ -72,9 +74,11 @@ extension RepositorySearchViewModel: ViewModelType {
             .disposed(by: disposeBag)
         
         return Output(
-            repositories: repositories.asDriver(),
+            repositories: repositories.asDriver(onErrorDriveWith: .empty()),
             selectedRepository: selectedRepository.asDriver(onErrorDriveWith: .empty()),
-            searchDescription: searchDescription.asDriver(onErrorDriveWith: .empty())
+            searchDescription: searchDescription.asDriver(onErrorDriveWith: .empty()),
+            error: error.asDriver(onErrorDriveWith: .empty()),
+            isLoading: isLoading.asDriver()
         )
     }
 }
