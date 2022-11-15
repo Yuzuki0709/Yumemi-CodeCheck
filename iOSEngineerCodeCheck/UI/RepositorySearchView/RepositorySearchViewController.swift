@@ -116,4 +116,10 @@ final class RepositorySearchViewController: UIViewController {
             })
             .disposed(by: disposeBag)
     }
+    
+    private func playAnimation(_ result: SearchResultAnimation) {
+        animationView.animation = LottieAnimation.named(result.rawValue)
+        animationView.isHidden  = false
+        animationView.play()
+    }
 }
