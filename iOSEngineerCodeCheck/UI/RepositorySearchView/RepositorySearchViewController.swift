@@ -100,9 +100,11 @@ final class RepositorySearchViewController: UIViewController {
             .drive(onNext: { [weak self] repositories in
                 guard let self = self else { return }
                 
-                // 検索結果が空だったら、アニメーションを表示する
+                // 検索結果が空だったら、アニメーションとアラートを表示する
                 if repositories.isEmpty {
                     self.playAnimation(.empty)
+                    self.displayNormalAlert(title: "検索結果が見つかりませんでした。",
+                                            message: "別のキーワードをお試しください。")
                 } else {
                     self.animationView.isHidden       = true
                     self.repositoryTableView.isHidden = false
