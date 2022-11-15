@@ -8,42 +8,24 @@
 
 import UIKit
 
-final class RepositorySearchViewController: UITableViewController, UISearchBarDelegate {
+final class RepositorySearchViewController: UITableViewController {
     
     @IBOutlet private weak var searchBar: UISearchBar!
     
-    var repositories:      [[String: Any]] = []
-    var selectedRepository: [String: Any]? = nil
+    private var repositories: [GitHubRepository] = []
+    private let githubAPI = GitHubAPI()
+    
+    var selectedRepository: GitHubRepository? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        searchBar.placeholder = "GitHubのリポジトリを検索できるよー"
-        searchBar.delegate = self
+        setSearchBar()
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        guard let searchWord = searchBar.text,
-              !searchWord.isEmpty else { return }
-        
-        let githubAPIURLString = "https://api.github.com/search/repositories?q=\(searchWord)"
-        guard let githubAPIURL = URL(string: githubAPIURLString) else { return }
-        
-        URLSession.shared.dataTask(with: githubAPIURL) { (data, res, err) in
-            
-            guard let data = data,
-                  let obj   = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
-                  let items = obj["items"] as? [[String: Any]] else { return }
-            
-            self.repositories = items
-            
-            DispatchQueue.main.async {
-                // これ呼ばなきゃリストが更新されません
-                self.tableView.reloadData()
-            }
-        }
-        .resume()
+    private func setSearchBar() {
+        searchBar.placeholder = "GitHubのリポジトリを検索できるよー"
+        searchBar.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -65,8 +47,8 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
         let repository = repositories[indexPath.row]
         var content    = cell.defaultContentConfiguration()
         
-        content.text = repository["full_name"] as? String ?? ""
-        content.secondaryText = repository["language"] as? String ?? ""
+        content.text = repository.fullName
+        content.secondaryText = repository.language
         cell.contentConfiguration = content
         cell.tag = indexPath.row
         
@@ -79,5 +61,27 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
         selectedRepository = repositories[indexPath.row]
         performSegue(withIdentifier: "Detail", sender: self)
         
+    }
+}
+
+extension RepositorySearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        guard let searchWord = searchBar.text,
+              !searchWord.isEmpty else { return }
+        
+        githubAPI.searchRepositories(keyword: searchWord) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let repositories):
+                self.repositories = repositories
+                self.tableView.reloadData()
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class RepositoryDetailViewController: UIViewController {
     
@@ -18,42 +19,32 @@ final class RepositoryDetailViewController: UIViewController {
     @IBOutlet private weak var forksLabel:    UILabel!
     @IBOutlet private weak var issuesLabel:   UILabel!
     
-    var repository: [String: Any]!
+    var repository: GitHubRepository!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setLabels()
-        fetchUserImage()
+        setUserImage()
     }
     
     private func setLabels() {
-        titleLabel.text    = repository["full_name"] as? String
-        languageLabel.text = "Written in \(repository["language"] as? String ?? "")"
-        starsLabel.text    = "\(repository["stargazers_count"] as? Int ?? 0) stars"
-        watchersLabel.text = "\(repository["watchers_count"] as? Int ?? 0) watchers"
-        forksLabel.text    = "\(repository["forks_count"] as? Int ?? 0) forks"
-        issuesLabel.text   = "\(repository["open_issues_count"] as? Int ?? 0) open issues"
+        titleLabel.text    = repository.fullName
+        languageLabel.text = "Written in \(repository.language ?? "")"
+        starsLabel.text    = "\(repository.stargazersCount) stars"
+        watchersLabel.text = "\(repository.watchersCount) watchers"
+        forksLabel.text    = "\(repository.forksCount) forks"
+        issuesLabel.text   = "\(repository.openIssuesCount) open issues"
         
         // 長さによって大きさを変更する
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.minimumScaleFactor = 0.5
     }
     
-    private func fetchUserImage(){
+    
+    private func setUserImage(){
         
-        guard let owner = repository["owner"] as? [String: Any],
-              let imageURLString = owner["avatar_url"] as? String,
-              let imageURL = URL(string: imageURLString) else { return }
-        
-        URLSession.shared.dataTask(with: imageURL) { (data, res, err) in
-            guard let data = data,
-                  let userImage = UIImage(data: data) else { return }
-            
-            DispatchQueue.main.async {
-                self.userImageView.image = userImage
-            }
-        }
-        .resume()
+        userImageView.kf.setImage(with: URL(string: repository.owner.avatarURL),
+                                  placeholder: UIImage(systemName: "photo"))
     }
 }

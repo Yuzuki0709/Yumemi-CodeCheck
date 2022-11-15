@@ -3,10 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2504FFC29236188001533DF /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2504FFB29236188001533DF /* GitHubRepository.swift */; };
+		A2504FFE292362C1001533DF /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2504FFD292362C0001533DF /* SearchResponse.swift */; };
+		A25050012923634E001533DF /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = A25050002923634E001533DF /* Moya */; };
+		A25050032923634E001533DF /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = A25050022923634E001533DF /* RxMoya */; };
+		A250500529236376001533DF /* GitHubAPITarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250500429236376001533DF /* GitHubAPITarget.swift */; };
+		A2505007292367EC001533DF /* APIClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2505006292367EC001533DF /* APIClientError.swift */; };
+		A25050092923690E001533DF /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25050082923690E001533DF /* GitHubAPI.swift */; };
+		A250500C29236E98001533DF /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = A250500B29236E98001533DF /* Kingfisher */; };
 		BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -36,6 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A2504FFB29236188001533DF /* GitHubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepository.swift; sourceTree = "<group>"; };
+		A2504FFD292362C0001533DF /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		A250500429236376001533DF /* GitHubAPITarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPITarget.swift; sourceTree = "<group>"; };
+		A2505006292367EC001533DF /* APIClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientError.swift; sourceTree = "<group>"; };
+		A25050082923690E001533DF /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A250500C29236E98001533DF /* Kingfisher in Frameworks */,
+				A25050032923634E001533DF /* RxMoya in Frameworks */,
+				A25050012923634E001533DF /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +94,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A2504FFA29236160001533DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A250500429236376001533DF /* GitHubAPITarget.swift */,
+				A25050082923690E001533DF /* GitHubAPI.swift */,
+				A250500E29237067001533DF /* Error */,
+				A250500D29237045001533DF /* Response */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A250500D29237045001533DF /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				A2504FFD292362C0001533DF /* SearchResponse.swift */,
+				A2504FFB29236188001533DF /* GitHubRepository.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		A250500E29237067001533DF /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				A2505006292367EC001533DF /* APIClientError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		BFD945D2244DC5E80012785A = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +145,7 @@
 		BFD945DD244DC5E80012785A /* iOSEngineerCodeCheck */ = {
 			isa = PBXGroup;
 			children = (
+				A2504FFA29236160001533DF /* Model */,
 				BFD945DE244DC5E80012785A /* AppDelegate.swift */,
 				BFD945E0244DC5E80012785A /* SceneDelegate.swift */,
 				BFD945E2244DC5E80012785A /* RepositorySearchViewController.swift */,
@@ -147,6 +192,11 @@
 			dependencies = (
 			);
 			name = iOSEngineerCodeCheck;
+			packageProductDependencies = (
+				A25050002923634E001533DF /* Moya */,
+				A25050022923634E001533DF /* RxMoya */,
+				A250500B29236E98001533DF /* Kingfisher */,
+			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
 			productType = "com.apple.product-type.application";
@@ -219,6 +269,10 @@
 				Base,
 			);
 			mainGroup = BFD945D2244DC5E80012785A;
+			packageReferences = (
+				A2504FFF2923634E001533DF /* XCRemoteSwiftPackageReference "Moya" */,
+				A250500A29236E98001533DF /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -263,8 +317,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD945E3244DC5E80012785A /* RepositorySearchViewController.swift in Sources */,
+				A25050092923690E001533DF /* GitHubAPI.swift in Sources */,
+				A250500529236376001533DF /* GitHubAPITarget.swift in Sources */,
+				A2505007292367EC001533DF /* APIClientError.swift in Sources */,
 				BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */,
+				A2504FFE292362C1001533DF /* SearchResponse.swift in Sources */,
 				BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */,
+				A2504FFC29236188001533DF /* GitHubRepository.swift in Sources */,
 				BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -594,6 +653,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A2504FFF2923634E001533DF /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		A250500A29236E98001533DF /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A25050002923634E001533DF /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2504FFF2923634E001533DF /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		A25050022923634E001533DF /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A2504FFF2923634E001533DF /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
+		A250500B29236E98001533DF /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A250500A29236E98001533DF /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFD945D3244DC5E80012785A /* Project object */;
 }
