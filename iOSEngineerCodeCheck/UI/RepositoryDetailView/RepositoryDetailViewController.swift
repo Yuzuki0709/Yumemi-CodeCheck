@@ -17,13 +17,22 @@ final class RepositoryDetailViewController: UITableViewController {
         return view
     }
     
-    @IBOutlet private weak var userImageView: UIImageView!
-    @IBOutlet private weak var titleLabel:    UILabel!
-    @IBOutlet private weak var languageLabel: UILabel!
-    @IBOutlet private weak var starsLabel:    UILabel!
-    @IBOutlet private weak var watchersLabel: UILabel!
-    @IBOutlet private weak var forksLabel:    UILabel!
-    @IBOutlet private weak var issuesLabel:   UILabel!
+    @IBOutlet private weak var detailTableView:  UITableView!
+    @IBOutlet private weak var userImageView:    UIImageView!
+    @IBOutlet private weak var titleLabel:       UILabel!
+    @IBOutlet private weak var descriptionLabel: UILabel!
+    @IBOutlet private weak var languageLabel:    UILabel!
+    @IBOutlet private weak var starsLabel:       UILabel!
+    @IBOutlet private weak var watchersLabel:    UILabel!
+    @IBOutlet private weak var forksLabel:       UILabel!
+    @IBOutlet private weak var createdLabel:     UILabel!
+    @IBOutlet private weak var updatedLabel:     UILabel!
+    @IBOutlet private weak var issuesLabel:      UILabel!
+    @IBOutlet private weak var sizeLabel:        UILabel!
+    @IBOutlet private weak var homepageLabel:    UILabel!
+    
+    @IBOutlet private weak var homepageCell:     UITableViewCell!
+    @IBOutlet private weak var readmeCell:       UITableViewCell!
     
     private var repository: GitHubRepository!
     

@@ -554,11 +554,19 @@
                         </sections>
                     </tableView>
                     <connections>
+                        <outlet property="createdLabel" destination="SP6-cS-qf4" id="9La-OJ-RuR"/>
+                        <outlet property="descriptionLabel" destination="1ei-ym-qmY" id="3Oh-f7-ShD"/>
+                        <outlet property="detailTableView" destination="mmJ-6q-i81" id="bNu-4e-gLY"/>
                         <outlet property="forksLabel" destination="Emn-Td-n4r" id="S2h-VA-OLf"/>
+                        <outlet property="homepageCell" destination="80n-AH-eGJ" id="J5t-WV-MOq"/>
+                        <outlet property="homepageLabel" destination="8E5-mr-0YS" id="95C-7N-uym"/>
                         <outlet property="issuesLabel" destination="Q9W-VK-bLi" id="fwg-4n-A3Y"/>
                         <outlet property="languageLabel" destination="zQF-nk-6KW" id="mi2-Uv-2tZ"/>
+                        <outlet property="readmeCell" destination="jJa-Ye-Wlf" id="P4p-Sb-5Ef"/>
+                        <outlet property="sizeLabel" destination="lZM-ko-HWg" id="TpV-xV-NWy"/>
                         <outlet property="starsLabel" destination="N1u-cV-2A3" id="ZEP-9q-kW9"/>
                         <outlet property="titleLabel" destination="R5W-17-xXB" id="NXR-CB-oZa"/>
+                        <outlet property="updatedLabel" destination="0mt-DZ-Yog" id="9l1-21-vWV"/>
                         <outlet property="userImageView" destination="hIl-Hu-Lpp" id="jmL-F6-IsC"/>
                         <outlet property="watchersLabel" destination="OUq-A2-goC" id="Hin-WQ-Scx"/>
                     </connections>
