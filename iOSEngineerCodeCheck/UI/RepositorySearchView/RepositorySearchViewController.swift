@@ -130,6 +130,8 @@ final class RepositorySearchViewController: UIViewController {
             .drive(onNext: { [weak self] error in
                 guard let self = self else { return }
                 
+                // エラーだったら、アニメーションとアラートを表示する
+                self.playAnimation(.error)
                 self.displayNormalAlert(title: error.localizedDescription, message: nil)
             })
             .disposed(by: disposeBag)
