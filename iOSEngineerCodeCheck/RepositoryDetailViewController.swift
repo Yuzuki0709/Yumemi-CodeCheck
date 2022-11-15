@@ -25,7 +25,7 @@ final class RepositoryDetailViewController: UIViewController {
         super.viewDidLoad()
         
         setLabels()
-        fetchUserImage()
+        setUserImage()
     }
     
     private func setLabels() {
@@ -42,7 +42,7 @@ final class RepositoryDetailViewController: UIViewController {
     }
     
     
-    private func fetchUserImage(){
+    private func setUserImage(){
         
         userImageView.kf.setImage(with: URL(string: repository.owner.avatarURL),
                                   placeholder: UIImage(systemName: "photo"))
