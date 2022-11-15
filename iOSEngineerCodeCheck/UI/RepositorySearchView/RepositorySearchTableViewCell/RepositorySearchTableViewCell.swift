@@ -29,10 +29,11 @@ class RepositorySearchTableViewCell: UITableViewCell {
         descriptionLabel.text = repository.description
         
         if let language = repository.language {
-            languageLabel.text = language
-            languageIcon.isHidden = false
+            languageLabel.text     = language
+            languageIcon.tintColor = LanguageIcon(language: language).color
+            languageIcon.isHidden  = false
         } else {
-            languageLabel.text = ""
+            languageLabel.text    = ""
             languageIcon.isHidden = true
         }
     }
