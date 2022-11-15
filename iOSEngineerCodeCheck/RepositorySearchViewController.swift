@@ -8,9 +8,10 @@
 
 import UIKit
 
-final class RepositorySearchViewController: UITableViewController {
+final class RepositorySearchViewController: UIViewController {
     
     @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var repositoryTableView: UITableView!
     
     private var repositories: [GitHubRepository] = []
     private let githubAPI = GitHubAPI()
@@ -36,32 +37,6 @@ final class RepositorySearchViewController: UITableViewController {
         }
         
     }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repositories.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell       = UITableViewCell()
-        let repository = repositories[indexPath.row]
-        var content    = cell.defaultContentConfiguration()
-        
-        content.text = repository.fullName
-        content.secondaryText = repository.language
-        cell.contentConfiguration = content
-        cell.tag = indexPath.row
-        
-        return cell
-        
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 画面遷移時に呼ばれる
-        selectedRepository = repositories[indexPath.row]
-        performSegue(withIdentifier: "Detail", sender: self)
-        
-    }
 }
 
 extension RepositorySearchViewController: UISearchBarDelegate {
@@ -77,7 +52,7 @@ extension RepositorySearchViewController: UISearchBarDelegate {
             switch result {
             case .success(let repositories):
                 self.repositories = repositories
-                self.tableView.reloadData()
+                self.repositoryTableView.reloadData()
                 
             case .failure(let error):
                 print(error)
