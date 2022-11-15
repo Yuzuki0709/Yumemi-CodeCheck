@@ -12,10 +12,8 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
     
     @IBOutlet private weak var searchBar: UISearchBar!
     
-    var repositories:      [[String: Any]] = []
+    var repositories:   [GitHubRepository] = []
     var selectedRepository: [String: Any]? = nil
-    
-    var temp: [GitHubRepository] = []
     
     private let githubAPI = GitHubAPI()
     
@@ -36,7 +34,7 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
             
             switch result {
             case .success(let repositories):
-                self.temp = repositories
+                self.repositories = repositories
                 self.tableView.reloadData()
                 
             case .failure(let error):
@@ -64,8 +62,8 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
         let repository = repositories[indexPath.row]
         var content    = cell.defaultContentConfiguration()
         
-        content.text = repository["full_name"] as? String ?? ""
-        content.secondaryText = repository["language"] as? String ?? ""
+        content.text = repository.fullName
+        content.secondaryText = repository.language
         cell.contentConfiguration = content
         cell.tag = indexPath.row
         
