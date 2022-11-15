@@ -20,6 +20,10 @@ final class RepositorySearchViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setSearchBar()
+    }
+    
+    private func setSearchBar() {
         searchBar.placeholder = "GitHubのリポジトリを検索できるよー"
         searchBar.delegate = self
     }
