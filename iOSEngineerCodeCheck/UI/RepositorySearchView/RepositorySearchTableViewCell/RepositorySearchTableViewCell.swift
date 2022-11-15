@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class RepositorySearchTableViewCell: UITableViewCell {
+final class RepositorySearchTableViewCell: UITableViewCell {
     
     @IBOutlet private weak var userImageView:    UIImageView!
     @IBOutlet private weak var languageIcon:     UIImageView!
