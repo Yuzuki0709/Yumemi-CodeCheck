@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class RepositorySearchViewController: UITableViewController, UISearchBarDelegate {
+final class RepositorySearchViewController: UITableViewController {
     
     @IBOutlet private weak var searchBar: UISearchBar!
     
@@ -22,25 +22,6 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
         // Do any additional setup after loading the view.
         searchBar.placeholder = "GitHubのリポジトリを検索できるよー"
         searchBar.delegate = self
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
-        guard let searchWord = searchBar.text,
-              !searchWord.isEmpty else { return }
-        
-        githubAPI.searchRepositories(keyword: searchWord) { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let repositories):
-                self.repositories = repositories
-                self.tableView.reloadData()
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -76,5 +57,27 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
         selectedRepository = repositories[indexPath.row]
         performSegue(withIdentifier: "Detail", sender: self)
         
+    }
+}
+
+extension RepositorySearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        guard let searchWord = searchBar.text,
+              !searchWord.isEmpty else { return }
+        
+        githubAPI.searchRepositories(keyword: searchWord) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .success(let repositories):
+                self.repositories = repositories
+                self.tableView.reloadData()
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
