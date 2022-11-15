@@ -33,19 +33,8 @@ extension RepositorySearchViewModel: ViewModelType {
             .withLatestFrom(input.searchText)
             .flatMapLatest { [unowned self] searchText -> Observable<Event<[GitHubRepository]>> in
                 
-                var repositories: [GitHubRepository] = []
-                
-                self.githubAPI.searchRepositories(keyword: searchText) { result in
-                    
-                    switch result {
-                    case .success(let response):
-                        repositories = response
-                    case .failure(let error):
-                        print(error)
-                    }
-                }
-                
-                return Observable.just(repositories)
+                self.githubAPI
+                    .searchRepositories(keyword: searchText)
                     .materialize()
             }
             .subscribe(onNext: { result in
