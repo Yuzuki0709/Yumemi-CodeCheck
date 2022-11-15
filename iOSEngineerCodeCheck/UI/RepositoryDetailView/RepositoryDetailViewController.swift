@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-final class RepositoryDetailViewController: UIViewController {
+final class RepositoryDetailViewController: UITableViewController {
     
     static func make(repository: GitHubRepository) -> RepositoryDetailViewController {
         let view = RepositoryDetailViewController.instantiate(storyboardName: "RepositoryDetailView")
