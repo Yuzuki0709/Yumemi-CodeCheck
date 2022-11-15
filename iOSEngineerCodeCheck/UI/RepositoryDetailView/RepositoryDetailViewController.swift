@@ -11,6 +11,12 @@ import Kingfisher
 
 final class RepositoryDetailViewController: UIViewController {
     
+    static func make(repository: GitHubRepository) -> RepositoryDetailViewController {
+        let view = RepositoryDetailViewController.instantiate(storyboardName: "RepositoryDetailView")
+        view.repository = repository
+        return view
+    }
+    
     @IBOutlet private weak var userImageView: UIImageView!
     @IBOutlet private weak var titleLabel:    UILabel!
     @IBOutlet private weak var languageLabel: UILabel!
