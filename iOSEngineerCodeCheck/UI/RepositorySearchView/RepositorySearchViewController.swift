@@ -137,3 +137,5 @@ final class RepositorySearchViewController: UIViewController {
         animationView.play()
     }
 }
+
+extension RepositorySearchViewController: AlertDisplaying {}
