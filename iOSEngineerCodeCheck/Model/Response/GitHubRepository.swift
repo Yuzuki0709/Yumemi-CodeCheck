@@ -7,6 +7,7 @@ public struct GitHubRepository: Codable {
     public let description    : String?
     public let createdAt      : Date
     public let updatedAt      : Date
+    public let homepage       : String?
     public let stargazersCount: Int
     public let watchersCount  : Int
     public let language       : String?
@@ -20,6 +21,7 @@ public struct GitHubRepository: Codable {
         case description
         case createdAt       = "created_at"
         case updatedAt       = "updated_at"
+        case homepage
         case stargazersCount = "stargazers_count"
         case watchersCount   = "watchers_count"
         case language
