@@ -25,7 +25,7 @@ final class RepositoryDetailViewController: UIViewController {
     @IBOutlet private weak var forksLabel:    UILabel!
     @IBOutlet private weak var issuesLabel:   UILabel!
     
-    var repository: GitHubRepository!
+    private var repository: GitHubRepository!
     
     override func viewDidLoad() {
         super.viewDidLoad()
