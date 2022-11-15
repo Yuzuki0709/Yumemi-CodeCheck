@@ -27,6 +27,7 @@
 		A250502829239C37001533DF /* RepositorySearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A250502629239C37001533DF /* RepositorySearchTableViewCell.xib */; };
 		A250502A29239FF7001533DF /* LanguageIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250502929239FF7001533DF /* LanguageIcon.swift */; };
 		A250502D2923A196001533DF /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250502C2923A196001533DF /* UIColor.swift */; };
+		A25050302923AE21001533DF /* PKHUD in Frameworks */ = {isa = PBXBuildFile; productRef = A250502F2923AE21001533DF /* PKHUD */; };
 		BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -96,6 +97,7 @@
 				A25050032923634E001533DF /* RxMoya in Frameworks */,
 				A250501129238A9B001533DF /* RxCocoa in Frameworks */,
 				A25050012923634E001533DF /* Moya in Frameworks */,
+				A25050302923AE21001533DF /* PKHUD in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +279,7 @@
 				A250501029238A9B001533DF /* RxCocoa */,
 				A250501229238A9B001533DF /* RxRelay */,
 				A250501429238A9B001533DF /* RxSwift */,
+				A250502F2923AE21001533DF /* PKHUD */,
 			);
 			productName = iOSEngineerCodeCheck;
 			productReference = BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */;
@@ -354,6 +357,7 @@
 				A2504FFF2923634E001533DF /* XCRemoteSwiftPackageReference "Moya" */,
 				A250500A29236E98001533DF /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				A250500F29238A9B001533DF /* XCRemoteSwiftPackageReference "RxSwift" */,
+				A250502E2923AE21001533DF /* XCRemoteSwiftPackageReference "PKHUD" */,
 			);
 			productRefGroup = BFD945DC244DC5E80012785A /* Products */;
 			projectDirPath = "";
@@ -761,6 +765,14 @@
 				kind = branch;
 			};
 		};
+		A250502E2923AE21001533DF /* XCRemoteSwiftPackageReference "PKHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pkluz/PKHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -793,6 +805,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A250500F29238A9B001533DF /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		A250502F2923AE21001533DF /* PKHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A250502E2923AE21001533DF /* XCRemoteSwiftPackageReference "PKHUD" */;
+			productName = PKHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
