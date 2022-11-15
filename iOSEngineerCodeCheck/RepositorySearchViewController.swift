@@ -61,11 +61,15 @@ final class RepositorySearchViewController: UITableViewController, UISearchBarDe
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell()
+        let cell       = UITableViewCell()
         let repository = repositories[indexPath.row]
-        cell.textLabel?.text = repository["full_name"] as? String ?? ""
-        cell.detailTextLabel?.text = repository["language"] as? String ?? ""
+        var content    = cell.defaultContentConfiguration()
+        
+        content.text = repository["full_name"] as? String ?? ""
+        content.secondaryText = repository["language"] as? String ?? ""
+        cell.contentConfiguration = content
         cell.tag = indexPath.row
+        
         return cell
         
     }

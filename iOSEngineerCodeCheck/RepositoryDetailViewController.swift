@@ -31,9 +31,13 @@ final class RepositoryDetailViewController: UIViewController {
         titleLabel.text    = repository["full_name"] as? String
         languageLabel.text = "Written in \(repository["language"] as? String ?? "")"
         starsLabel.text    = "\(repository["stargazers_count"] as? Int ?? 0) stars"
-        watchersLabel.text = "\(repository["wachers_count"] as? Int ?? 0) watchers"
+        watchersLabel.text = "\(repository["watchers_count"] as? Int ?? 0) watchers"
         forksLabel.text    = "\(repository["forks_count"] as? Int ?? 0) forks"
         issuesLabel.text   = "\(repository["open_issues_count"] as? Int ?? 0) open issues"
+        
+        // 長さによって大きさを変更する
+        titleLabel.adjustsFontSizeToFitWidth = true
+        titleLabel.minimumScaleFactor = 0.5
     }
     
     private func fetchUserImage(){
