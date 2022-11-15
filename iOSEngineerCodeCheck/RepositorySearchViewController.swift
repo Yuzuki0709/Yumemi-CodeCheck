@@ -12,10 +12,10 @@ final class RepositorySearchViewController: UITableViewController {
     
     @IBOutlet private weak var searchBar: UISearchBar!
     
-    var repositories:      [GitHubRepository] = []
-    var selectedRepository: GitHubRepository? = nil
-    
+    private var repositories: [GitHubRepository] = []
     private let githubAPI = GitHubAPI()
+    
+    var selectedRepository: GitHubRepository? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
