@@ -26,11 +26,40 @@ final class RepositorySearchViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setSearchBar()
+        bindViewModel()
     }
     
     private func setSearchBar() {
         searchBar.placeholder = "GitHubのリポジトリを検索できるよー"
         searchBar.delegate = self
+    }
+    
+    private func bindViewModel() {
+        let input = RepositorySearchViewModel.Input(
+            searchText: searchBar.rx.text.orEmpty.asObservable(),
+            searchButtonTapped: searchBar.rx.searchButtonClicked.asObservable(),
+            selectedRepository: repositoryTableView.rx.itemSelected.asObservable()
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        output.repositories
+            .drive(repositoryTableView.rx.items) { _, row, element in
+                let cell    = UITableViewCell()
+                var content = cell.defaultContentConfiguration()
+                
+                content.text = element.fullName
+                content.secondaryText = element.language ?? ""
+                cell.contentConfiguration = content
+                cell.tag = row
+                
+                return cell
+            }
+            .disposed(by: disposeBag)
+        
+        output.searchDescription
+            .drive(navigationItem.rx.title)
+            .disposed(by: disposeBag)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -46,18 +75,18 @@ final class RepositorySearchViewController: UIViewController {
 extension RepositorySearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        
+
         guard let searchWord = searchBar.text,
               !searchWord.isEmpty else { return }
-        
+
         githubAPI.searchRepositories(keyword: searchWord) { [weak self] result in
             guard let self = self else { return }
-            
+
             switch result {
             case .success(let repositories):
                 self.repositories = repositories
                 self.repositoryTableView.reloadData()
-                
+
             case .failure(let error):
                 print(error)
             }
