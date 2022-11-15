@@ -26,6 +26,7 @@
 		A250502729239C37001533DF /* RepositorySearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250502529239C37001533DF /* RepositorySearchTableViewCell.swift */; };
 		A250502829239C37001533DF /* RepositorySearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A250502629239C37001533DF /* RepositorySearchTableViewCell.xib */; };
 		A250502A29239FF7001533DF /* LanguageIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250502929239FF7001533DF /* LanguageIcon.swift */; };
+		A250502D2923A196001533DF /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250502C2923A196001533DF /* UIColor.swift */; };
 		BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -67,6 +68,7 @@
 		A250502529239C37001533DF /* RepositorySearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchTableViewCell.swift; sourceTree = "<group>"; };
 		A250502629239C37001533DF /* RepositorySearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositorySearchTableViewCell.xib; sourceTree = "<group>"; };
 		A250502929239FF7001533DF /* LanguageIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageIcon.swift; sourceTree = "<group>"; };
+		A250502C2923A196001533DF /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		A250502B2923A169001533DF /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				A250502C2923A196001533DF /* UIColor.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				A250501929238B22001533DF /* ViewModelType.swift in Sources */,
 				BFD945E3244DC5E80012785A /* RepositorySearchViewController.swift in Sources */,
 				A25050092923690E001533DF /* GitHubAPI.swift in Sources */,
+				A250502D2923A196001533DF /* UIColor.swift in Sources */,
 				A250502A29239FF7001533DF /* LanguageIcon.swift in Sources */,
 				A250500529236376001533DF /* GitHubAPITarget.swift in Sources */,
 				A2505007292367EC001533DF /* APIClientError.swift in Sources */,
