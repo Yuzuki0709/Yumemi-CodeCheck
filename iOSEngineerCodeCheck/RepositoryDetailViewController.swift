@@ -46,10 +46,10 @@ final class RepositoryDetailViewController: UIViewController {
         
         URLSession.shared.dataTask(with: avatarImageURL) { (data, res, err) in
             guard let data = data,
-                  let userImage = UIImage(data: data) else { return }
+                  let avatarImage = UIImage(data: data) else { return }
             
             DispatchQueue.main.async {
-                self.userImageView.image = userImage
+                self.userImageView.image = avatarImage
             }
         }
         .resume()
