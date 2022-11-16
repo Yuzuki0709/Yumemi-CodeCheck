@@ -25,6 +25,11 @@ final class RepositoryDetailPage: PageObject {
     private var readmeCell: XCUIElement {
         return self.detailTableView.cells[IDs.readmeCell].firstMatch
     }
+    
+    func goToHomepage() -> WebPage {
+        homepageCell.tap()
+        return WebPage(application: app)
+    }
 }
 
 extension RepositoryDetailPage {
