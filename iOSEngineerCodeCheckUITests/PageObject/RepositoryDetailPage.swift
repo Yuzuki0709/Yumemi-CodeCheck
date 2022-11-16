@@ -35,4 +35,8 @@ extension RepositoryDetailPage {
     var existsHomepageCell: Bool {
         return homepageCell.exists
     }
+    
+    var existsReadmeCell: Bool {
+        return readmeCell.exists
+    }
 }
