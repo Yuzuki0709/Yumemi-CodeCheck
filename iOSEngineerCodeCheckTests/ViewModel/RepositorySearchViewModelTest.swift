@@ -96,4 +96,11 @@ final class RepositorySearchViewModelTest: XCTestCase {
             .bind(to: searchButtonTapped)
             .disposed(by: disposeBag)
     }
+    
+    private func selectRepository(time: TestTime, _ indexPath: IndexPath) {
+        scheduler
+            .createHotObservable([.next(time, indexPath)])
+            .bind(to: selectedRepository)
+            .disposed(by: disposeBag)
+    }
 }
