@@ -273,6 +273,13 @@
 			path = WebView;
 			sourceTree = "<group>";
 		};
+		A2D71D792924E9C600517B55 /* PageObject */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PageObject;
+			sourceTree = "<group>";
+		};
 		BFD945D2244DC5E80012785A = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +327,7 @@
 		BFD945FF244DC5EB0012785A /* iOSEngineerCodeCheckUITests */ = {
 			isa = PBXGroup;
 			children = (
+				A2D71D792924E9C600517B55 /* PageObject */,
 				BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */,
 				BFD94602244DC5EC0012785A /* Info.plist */,
 			);
