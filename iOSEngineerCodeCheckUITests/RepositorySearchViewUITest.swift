@@ -34,4 +34,15 @@ final class RepositorySearchViewUITest: XCTestCase {
         XCTAssertTrue(repositorySearchPage.isShowAnimationView)
         XCTAssertFalse(repositorySearchPage.existsCell)
     }
+    
+    /// エラーだった時に、アニメーションが表示されることをテストする
+    func testSearchResultError() {
+        let repositorySearchPage = RepositorySearchPage(application: app)
+                
+        repositorySearchPage.searchRepository(keyword: " ")
+        
+        _ = app.waitForExistence(timeout: 5)
+        XCTAssertTrue(repositorySearchPage.isShowAnimationView)
+        XCTAssertFalse(repositorySearchPage.existsCell)
+    }
 }
