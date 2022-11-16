@@ -93,6 +93,15 @@ final class RepositoryDetailViewController: UITableViewController {
                 self.homepageCell.isHidden = !isExist
             })
             .disposed(by: disposeBag)
+        
+        output.goHomepageView
+            .drive(onNext: { [weak self] homepageURL in
+                guard let self = self else { return }
+                
+                let vc = WebViewController.make(url: homepageURL)
+                self.present(vc, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
