@@ -20,10 +20,15 @@ final class WebViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
-        webView.load(URLRequest(url: url))
-        
+        setWebView()
         setActivityIndecatorView()
         bindViewModel()
+    }
+    
+    private func setWebView() {
+        webView.load(URLRequest(url: url))
+        // スワイプで前画面に戻れる
+        webView.allowsBackForwardNavigationGestures = true
     }
     
     private func setActivityIndecatorView() {
