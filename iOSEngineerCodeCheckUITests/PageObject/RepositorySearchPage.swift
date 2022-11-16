@@ -46,4 +46,8 @@ extension RepositorySearchPage {
     var existsPage: Bool {
         return repositoryTableView.exists
     }
+    
+    var existsCell: Bool {
+        return firstCell.exists
+    }
 }
