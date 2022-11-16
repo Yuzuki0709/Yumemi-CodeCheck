@@ -35,6 +35,7 @@
 		A250503D292449C9001533DF /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250503C292449C9001533DF /* DateHelper.swift */; };
 		A250503F29246511001533DF /* ByteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250503E29246511001533DF /* ByteHelper.swift */; };
 		A2505042292472E8001533DF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2505041292472E8001533DF /* WebKit.framework */; };
+		A25050452924735B001533DF /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A25050442924735A001533DF /* WebView.storyboard */; };
 		BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -84,6 +85,7 @@
 		A250503C292449C9001533DF /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		A250503E29246511001533DF /* ByteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteHelper.swift; sourceTree = "<group>"; };
 		A2505041292472E8001533DF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		A25050442924735A001533DF /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 		A250504329247316001533DF /* WebView */ = {
 			isa = PBXGroup;
 			children = (
+				A25050442924735A001533DF /* WebView.storyboard */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				BFD945EB244DC5EB0012785A /* LaunchScreen.storyboard in Resources */,
 				A250502829239C37001533DF /* RepositorySearchTableViewCell.xib in Resources */,
 				BFD945E8244DC5EB0012785A /* Assets.xcassets in Resources */,
+				A25050452924735B001533DF /* WebView.storyboard in Resources */,
 				A2505020292394A9001533DF /* RepositorySearchView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
