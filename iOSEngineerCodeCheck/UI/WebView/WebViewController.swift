@@ -33,6 +33,13 @@ final class WebViewController: UIViewController {
         )
         
         let output = viewModel.transform(input: input)
+        
+        output.loading
+            .drive(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.activityIndecatorView.startAnimating()
+            })
+            .disposed(by: disposeBag)
     }
 }
 
