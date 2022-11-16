@@ -43,6 +43,7 @@ final class RepositoryDetailViewController: UITableViewController {
         
         setLabels()
         setUserImage()
+        bindViewModel()
     }
     
     private func setLabels() {
@@ -72,6 +73,15 @@ final class RepositoryDetailViewController: UITableViewController {
         userImageView.kf.setImage(with: URL(string: repository.owner.avatarURL),
                                   placeholder: UIImage(systemName: "photo"))
         userImageView.clipCircle()
+    }
+    
+    private func bindViewModel() {
+        let input = RepositoryDetailViewModel.Input(
+            viewWillAppear: self.rx.viewWillAppear,
+            tableCellTapped: detailTableView.rx.itemSelected.asObservable()
+        )
+        
+        let output = viewModel.transform(input: input)
     }
 }
 
