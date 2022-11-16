@@ -51,3 +51,4 @@ final class WebViewController: UIViewController {
 }
 
 extension WebViewController: StoryboardInstantiable {}
+extension WebViewController: AlertDisplaying {}
