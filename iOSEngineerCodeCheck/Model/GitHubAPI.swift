@@ -8,7 +8,7 @@ protocol GitHubAPIProtocol {
     /// APIからレポジトリを取得する関数
     /// - Parameters:
     ///   - keyword: 検索するキーワード
-    ///   - completion: 取得後の処理
+    /// - Returns: 正常に終わればObservable<[GitHubRepository]>を、エラーならErrorを返す
     func searchRepositories(keyword: String) -> Observable<[GitHubRepository]>
     
     
