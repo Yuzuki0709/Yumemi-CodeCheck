@@ -14,4 +14,19 @@ final class RepositorySearchViewModelTest: XCTestCase {
     var viewModel:          RepositorySearchViewModel!
     var input:              RepositorySearchViewModel.Input!
     var output:             RepositorySearchViewModel.Output!
+    
+    override func setUp() {
+        scheduler  = TestScheduler(initialClock: 0)
+        disposeBag = DisposeBag()
+        
+        searchText         = PublishRelay<String>()
+        searchButtonTapped = PublishRelay<Void>()
+        selectedRepository = PublishRelay<IndexPath>()
+        
+        input = RepositorySearchViewModel.Input(
+            searchText: searchText.asObservable(),
+            searchButtonTapped: searchButtonTapped.asObservable(),
+            selectedRepository: selectedRepository.asObservable()
+        )
+    }
 }
