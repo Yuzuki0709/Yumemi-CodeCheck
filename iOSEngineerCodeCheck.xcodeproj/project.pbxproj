@@ -11,6 +11,7 @@
 		A2475816292592A5000F6E22 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = A2475815292592A5000F6E22 /* RxTest */; };
 		A2475818292592DB000F6E22 /* RepositorySampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2475817292592DB000F6E22 /* RepositorySampleData.swift */; };
 		A247581A292594C3000F6E22 /* ReadmeSampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2475819292594C3000F6E22 /* ReadmeSampleData.swift */; };
+		A247581D29259561000F6E22 /* GitHubAPIMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A247581C29259561000F6E22 /* GitHubAPIMock.swift */; };
 		A2504FFC29236188001533DF /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2504FFB29236188001533DF /* GitHubRepository.swift */; };
 		A2504FFE292362C1001533DF /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2504FFD292362C0001533DF /* SearchResponse.swift */; };
 		A25050012923634E001533DF /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = A25050002923634E001533DF /* Moya */; };
@@ -83,6 +84,7 @@
 /* Begin PBXFileReference section */
 		A2475817292592DB000F6E22 /* RepositorySampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySampleData.swift; sourceTree = "<group>"; };
 		A2475819292594C3000F6E22 /* ReadmeSampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadmeSampleData.swift; sourceTree = "<group>"; };
+		A247581C29259561000F6E22 /* GitHubAPIMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIMock.swift; sourceTree = "<group>"; };
 		A2504FFB29236188001533DF /* GitHubRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRepository.swift; sourceTree = "<group>"; };
 		A2504FFD292362C0001533DF /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
 		A250500429236376001533DF /* GitHubAPITarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPITarget.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		A247581B29259528000F6E22 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
+				A247581C29259561000F6E22 /* GitHubAPIMock.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFD945F6244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift in Sources */,
+				A247581D29259561000F6E22 /* GitHubAPIMock.swift in Sources */,
 				A2475818292592DB000F6E22 /* RepositorySampleData.swift in Sources */,
 				A247581A292594C3000F6E22 /* ReadmeSampleData.swift in Sources */,
 			);
