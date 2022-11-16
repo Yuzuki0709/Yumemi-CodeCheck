@@ -19,11 +19,18 @@ final class WebViewController: UIViewController {
     private let viewModel  = WebViewModel()
     private let disposeBag = DisposeBag()
     
+    // MARK: - Lifecycle Method
+    
     override func viewDidLoad() {
         setWebView()
         setActivityIndecatorView()
         bindViewModel()
     }
+}
+
+// MARK: - Initialized Method
+
+extension WebViewController {
     
     private func setWebView() {
         webView.load(URLRequest(url: url))
