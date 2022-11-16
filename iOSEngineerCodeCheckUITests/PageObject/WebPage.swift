@@ -19,6 +19,6 @@ final class WebPage: PageObject {
 
 extension WebPage {
     var existsPage: Bool {
-        return true
+        return webView.exists
     }
 }
