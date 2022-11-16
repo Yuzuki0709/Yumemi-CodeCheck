@@ -10,3 +10,15 @@ final class GitHubAPIMock {
         self.error = error
     }
 }
+
+extension GitHubAPIMock: GitHubAPIProtocol {
+    func searchRepositories(keyword: String) -> Observable<[GitHubRepository]> {
+        if let error = error { return Observable.error(error) }
+        return Observable.just(RepositorySampleData.expectedData)
+    }
+    
+    func searchReadme(ownerName: String, repositoryName: String) -> Observable<GitHubReadme> {
+        if let error = error { return Observable.error(error) }
+        return Observable.just(ReadmeSampleData.appleReadme)
+    }
+}
