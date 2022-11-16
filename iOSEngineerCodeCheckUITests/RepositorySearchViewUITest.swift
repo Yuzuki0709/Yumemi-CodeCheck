@@ -13,4 +13,14 @@ final class RepositorySearchViewUITest: XCTestCase {
         app.terminate()
         super.tearDown()
     }
+    
+    /// レポジトリを検索し、検索結果がテーブルに表示されることを確認するテスト
+    func testSearchRepository() {
+        let repositorySearchPage = RepositorySearchPage(application: app)
+        
+        repositorySearchPage.searchRepository(keyword: "Swift")
+        
+        _ = app.waitForExistence(timeout: 5)
+        XCTAssertTrue(repositorySearchPage.existsCell)
+    }
 }
