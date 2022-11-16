@@ -128,6 +128,29 @@ final class RepositorySearchViewModelTest: XCTestCase {
                 .next(10, "\(searchWord)の検索結果")
             ])
         }
+        
+        // スケジューラをリセット
+        scheduler = TestScheduler(initialClock: 0)
+        
+        XCTContext.runActivity(named: "25文字以上") { _ in
+            let searchDescription = scheduler.createObserver(String.self)
+            let searchWord        = String(repeating: "a", count: 25)
+            
+            output = viewModel.transform(input: input)
+            
+            output.searchDescription
+                .drive(searchDescription)
+                .disposed(by: disposeBag)
+            
+            inputText(time: 5, searchWord)
+            searchButtonTap(time: 10)
+            
+            scheduler.start()
+            
+            XCTAssertEqual(searchDescription.events, [
+                .next(10, "\(searchWord)...の検索結果")
+            ])
+        }
     }
     
     private func inputText(time: TestTime, _ word: String) {
