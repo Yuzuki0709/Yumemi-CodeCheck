@@ -126,6 +126,30 @@ final class RepositoryDetailViewModelTest: XCTestCase {
         ])
     }
     
+    /// READMEセルをタップした時に、そのURLが返ってくることを確認するテスト
+    func testTapReadmeCell() {
+        let goReadmeView = scheduler.createObserver(URL.self)
+        
+        viewModel = RepositoryDetailViewModel(
+            repository: RepositorySampleData.appleRepository,
+            githubAPI: GitHubAPIMock()
+        )
+        output    = viewModel.transform(input: input)
+        
+        output.goReadmeView
+            .drive(goReadmeView)
+            .disposed(by: disposeBag)
+        
+        viewWillAppear(time: 10)
+        tableCellTap(time: 15, IndexPath(row: 1, section: 0))
+        
+        scheduler.start()
+        
+        XCTAssertEqual(goReadmeView.events, [
+            .next(15, URL(string: ReadmeSampleData.appleReadme.htmlURL)!)
+        ])
+    }
+    
     private func viewWillAppear(time: TestTime) {
         scheduler
             .createHotObservable([.next(time, Void())])
