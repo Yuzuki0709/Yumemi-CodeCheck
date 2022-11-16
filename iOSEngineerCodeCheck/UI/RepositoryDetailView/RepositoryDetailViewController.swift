@@ -85,6 +85,14 @@ final class RepositoryDetailViewController: UITableViewController {
         )
         
         let output = viewModel.transform(input: input)
+        
+        output.isExistHomepage
+            .drive(onNext: { [weak self] isExist in
+                guard let self = self else { return }
+                // ホームページがなければセルを表示しない
+                self.homepageCell.isHidden = !isExist
+            })
+            .disposed(by: disposeBag)
     }
 }
 
