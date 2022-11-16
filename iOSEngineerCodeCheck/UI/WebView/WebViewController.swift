@@ -13,6 +13,10 @@ final class WebViewController: UIViewController {
     @IBOutlet private weak var activityIndecatorView: UIActivityIndicatorView!
     
     private var url: URL!
+    
+    override func viewDidLoad() {
+        webView.load(URLRequest(url: url))
+    }
 }
 
 extension WebViewController: StoryboardInstantiable {}
