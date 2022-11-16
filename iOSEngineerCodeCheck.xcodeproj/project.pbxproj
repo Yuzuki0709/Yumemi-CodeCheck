@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2475814292592A5000F6E22 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = A2475813292592A5000F6E22 /* RxBlocking */; };
+		A2475816292592A5000F6E22 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = A2475815292592A5000F6E22 /* RxTest */; };
 		A2504FFC29236188001533DF /* GitHubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2504FFB29236188001533DF /* GitHubRepository.swift */; };
 		A2504FFE292362C1001533DF /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2504FFD292362C0001533DF /* SearchResponse.swift */; };
 		A25050012923634E001533DF /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = A25050002923634E001533DF /* Moya */; };
@@ -149,6 +151,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2475816292592A5000F6E22 /* RxTest in Frameworks */,
+				A2475814292592A5000F6E22 /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +400,10 @@
 				BFD945F3244DC5EB0012785A /* PBXTargetDependency */,
 			);
 			name = iOSEngineerCodeCheckTests;
+			packageProductDependencies = (
+				A2475813292592A5000F6E22 /* RxBlocking */,
+				A2475815292592A5000F6E22 /* RxTest */,
+			);
 			productName = iOSEngineerCodeCheckTests;
 			productReference = BFD945F1244DC5EB0012785A /* iOSEngineerCodeCheckTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -905,6 +913,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A2475813292592A5000F6E22 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A250500F29238A9B001533DF /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		A2475815292592A5000F6E22 /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A250500F29238A9B001533DF /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
 		A25050002923634E001533DF /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A2504FFF2923634E001533DF /* XCRemoteSwiftPackageReference "Moya" */;
