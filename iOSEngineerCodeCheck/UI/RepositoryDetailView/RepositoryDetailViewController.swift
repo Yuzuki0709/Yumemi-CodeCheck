@@ -110,6 +110,15 @@ final class RepositoryDetailViewController: UITableViewController {
                 self.present(vc, animated: true)
             })
             .disposed(by: disposeBag)
+        
+        output.goReadmeView
+            .drive(onNext: { [weak self] readmeURL in
+                guard let self = self else { return }
+                
+                let vc = WebViewController.make(url: readmeURL)
+                self.present(vc, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
