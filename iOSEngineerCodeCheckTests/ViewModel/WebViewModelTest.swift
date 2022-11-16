@@ -24,12 +24,13 @@ final class WebViewModelTest: XCTestCase {
         didFinishLoad = PublishRelay<WKNavigation>()
         didFailLoad   = PublishRelay<(WKNavigation, Error)>()
         
-        input  = WebViewModel.Input(
+        input = WebViewModel.Input(
             didStartLoad: didStartLoad.asObservable(),
             didFinishLoad: didFinishLoad.asObservable(),
             didFailLoad: didFailLoad.asObservable()
         )
         
-        output = viewModel.transform(input: input)
+        viewModel = WebViewModel()
+        output    = viewModel.transform(input: input)
     }
 }
