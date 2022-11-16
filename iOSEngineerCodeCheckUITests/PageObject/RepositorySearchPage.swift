@@ -50,4 +50,8 @@ extension RepositorySearchPage {
     var existsCell: Bool {
         return firstCell.exists
     }
+    
+    var isShowAnimationView: Bool {
+        return animationView.exists
+    }
 }
