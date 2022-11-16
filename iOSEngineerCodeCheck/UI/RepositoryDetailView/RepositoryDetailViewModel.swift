@@ -43,11 +43,11 @@ extension RepositoryDetailViewModel: ViewModelType {
         let goHomepageView  = PublishRelay<URL>()
         let goReadmeView    = PublishRelay<URL>()
         
+        // ホームページが存在するかどうかを判別
         input.viewWillAppear
             .subscribe(onNext: { [weak self] in
                 guard let self = self else { return }
                 
-                // ホームページが存在するかどうかを判別
                 if let homepageURLString = self.repository.homepage,
                    !homepageURLString.isEmpty {
                     homepageURL = URL(string: homepageURLString)
