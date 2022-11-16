@@ -14,6 +14,22 @@ final class RepositorySearchPage: PageObject {
     required init(application: XCUIApplication) {
         self.app = application
     }
+    
+    private var searchBar: XCUIElement {
+        return app.otherElements[IDs.searchBar].firstMatch
+    }
+    
+    private var repositoryTableView: XCUIElement {
+        return app.tables[IDs.repositoryTableView].firstMatch
+    }
+    
+    private var firstCell: XCUIElement {
+        return self.repositoryTableView.children(matching: .cell).firstMatch
+    }
+    
+    private var animationView: XCUIElement {
+        return app.otherElements[IDs.animationView].firstMatch
+    }
 }
 
 extension RepositorySearchPage {
