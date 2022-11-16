@@ -8,6 +8,8 @@
 
 import UIKit
 import Kingfisher
+import RxSwift
+import RxCocoa
 
 final class RepositoryDetailViewController: UITableViewController {
     
@@ -36,11 +38,33 @@ final class RepositoryDetailViewController: UITableViewController {
     
     private var repository: GitHubRepository!
     
+    private let disposeBag = DisposeBag()
+    private lazy var viewModel = RepositoryDetailViewModel(repository: repository)
+    
+    // MARK: - Lifecycle Method
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setTableView()
         setLabels()
         setUserImage()
+        bindViewModel()
+    }
+}
+
+
+// MARK: - Initialized Method
+
+extension RepositoryDetailViewController {
+    
+    private func setTableView() {
+        // セルがタップされた後に、選択状態を解除する
+        detailTableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                self?.detailTableView.deselectRow(at: indexPath, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setLabels() {
@@ -70,6 +94,49 @@ final class RepositoryDetailViewController: UITableViewController {
         userImageView.kf.setImage(with: URL(string: repository.owner.avatarURL),
                                   placeholder: UIImage(systemName: "photo"))
         userImageView.clipCircle()
+    }
+    
+    private func bindViewModel() {
+        let input = RepositoryDetailViewModel.Input(
+            viewWillAppear: self.rx.viewWillAppear,
+            tableCellTapped: detailTableView.rx.itemSelected.asObservable()
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        output.isExistHomepage
+            .drive(onNext: { [weak self] isExist in
+                guard let self = self else { return }
+                // ホームページがなければセルを表示しない
+                self.homepageCell.isHidden = !isExist
+            })
+            .disposed(by: disposeBag)
+        
+        output.isExistReadme
+            .drive(onNext: { [weak self] isExist in
+                guard let self = self else { return }
+                // READMEがなければセルを表示しない
+                self.readmeCell.isHidden = !isExist
+            })
+            .disposed(by: disposeBag)
+        
+        output.goHomepageView
+            .drive(onNext: { [weak self] homepageURL in
+                guard let self = self else { return }
+                
+                let vc = WebViewController.make(url: homepageURL)
+                self.present(vc, animated: true)
+            })
+            .disposed(by: disposeBag)
+        
+        output.goReadmeView
+            .drive(onNext: { [weak self] readmeURL in
+                guard let self = self else { return }
+                
+                let vc = WebViewController.make(url: readmeURL)
+                self.present(vc, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
