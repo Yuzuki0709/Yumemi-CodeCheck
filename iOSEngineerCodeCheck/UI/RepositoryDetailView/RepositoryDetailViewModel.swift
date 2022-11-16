@@ -70,12 +70,17 @@ extension RepositoryDetailViewModel: ViewModelType {
             })
             .disposed(by: disposeBag)
         
+        // indexPahtを使用して、タップされたセルを特定している
+        // もっといい方法がありそう
         input.tableCellTapped
             .subscribe(onNext: { indexPath in
                 if indexPath.row == 0 {
                     // ホームページセルはホームページのURLが有効な場合のみ表示されるので、
                     // 強制アンラップにしている
                     goHomepageView.accept(homepageURL!)
+                } else if indexPath.row == 1 {
+                    // 上と同じ理由で強制アンラップしている
+                    goReadmeView.accept(readmeURL!)
                 }
             })
             .disposed(by: disposeBag)
