@@ -45,4 +45,12 @@ final class RepositorySearchViewUITest: XCTestCase {
         XCTAssertTrue(repositorySearchPage.isShowAnimationView)
         XCTAssertFalse(repositorySearchPage.existsCell)
     }
+    
+    /// 検索結果のセルをタップした時に、詳細画面に遷移することを確認するテスト
+    func testGoToDetailView() {
+        let repositorySearchPage = RepositorySearchPage(application: app)
+        let repositoryDetailPage = repositorySearchPage.goToDetailView()
+        
+        XCTAssertTrue(repositoryDetailPage.existsPage)
+    }
 }
