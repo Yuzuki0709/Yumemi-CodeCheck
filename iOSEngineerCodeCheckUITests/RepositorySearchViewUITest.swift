@@ -23,4 +23,15 @@ final class RepositorySearchViewUITest: XCTestCase {
         _ = app.waitForExistence(timeout: 5)
         XCTAssertTrue(repositorySearchPage.existsCell)
     }
+    
+    /// 検索結果が空だった時に、アニメーションが表示されることを確認するテスト
+    func testSearchEmptyRepository() {
+        let repositorySearchPage = RepositorySearchPage(application: app)
+        
+        repositorySearchPage.searchRepository(keyword: "dagjhepiajfiajfpei")
+        
+        _ = app.waitForExistence(timeout: 5)
+        XCTAssertTrue(repositorySearchPage.isShowAnimationView)
+        XCTAssertFalse(repositorySearchPage.existsCell)
+    }
 }
