@@ -13,6 +13,18 @@ final class RepositoryDetailPage: PageObject {
     required init(application: XCUIApplication) {
         self.app = application
     }
+    
+    private var detailTableView: XCUIElement {
+        return app.tables[IDs.detailTableView].firstMatch
+    }
+    
+    private var homepageCell: XCUIElement {
+        return self.detailTableView.cells[IDs.homepageCell].firstMatch
+    }
+    
+    private var readmeCell: XCUIElement {
+        return self.detailTableView.cells[IDs.readmeCell].firstMatch
+    }
 }
 
 extension RepositoryDetailPage {
