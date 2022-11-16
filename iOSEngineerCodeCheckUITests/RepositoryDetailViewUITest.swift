@@ -33,4 +33,15 @@ final class RepositoryDetailViewUITest: XCTestCase {
         
         XCTAssertTrue(homepageView.existsPage)
     }
+    
+    /// READMEセルをタップした時に、READMEが表示されることを確認するテスト
+    func testGoToReadmeView() {
+        let repositoryDetailView = RepositorySearchPage(application: app).goToDetailView()
+        
+        _ = app.waitForExistence(timeout: 5)
+        
+        let readmeView = repositoryDetailView.goToReadme()
+        
+        XCTAssertTrue(readmeView.existsPage)
+    }
 }
