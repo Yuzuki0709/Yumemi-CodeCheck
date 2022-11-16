@@ -6,9 +6,11 @@ final class RepositoryDetailViewModel {
     private let disposeBag = DisposeBag()
     
     private let repository: GitHubRepository
+    private let githubAPI:  GitHubAPIProtocol
     
-    init(repository: GitHubRepository) {
+    init(repository: GitHubRepository, githubAPI: GitHubAPIProtocol = GitHubAPI()) {
         self.repository = repository
+        self.githubAPI  = githubAPI
     }
 }
 
