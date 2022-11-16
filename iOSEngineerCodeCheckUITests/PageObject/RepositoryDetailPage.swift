@@ -30,6 +30,11 @@ final class RepositoryDetailPage: PageObject {
         homepageCell.tap()
         return WebPage(application: app)
     }
+    
+    func goToReadme() -> WebPage {
+        readmeCell.tap()
+        return WebPage(application: app)
+    }
 }
 
 extension RepositoryDetailPage {
