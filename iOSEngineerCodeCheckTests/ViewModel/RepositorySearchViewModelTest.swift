@@ -83,6 +83,28 @@ final class RepositorySearchViewModelTest: XCTestCase {
         XCTAssertNotEqual(error as! TestError, TestError.dummyError2)
     }
     
+    /// レポジトリをタップした時、該当のレポジトリが返ってくることを確認するテスト
+    func testSelectedRepository() {
+        let selectedRepository = scheduler.createObserver(GitHubRepository.self)
+        
+        viewModel = RepositorySearchViewModel(githubAPI: GitHubAPIMock())
+        output    = viewModel.transform(input: input)
+        
+        output.selectedRepository
+            .drive(selectedRepository)
+            .disposed(by: disposeBag)
+        
+        inputText(time: 5, "Swift")
+        searchButtonTap(time: 10)
+        selectRepository(time: 15, IndexPath(row: 0, section: 0))
+        
+        scheduler.start()
+        
+        XCTAssertEqual(selectedRepository.events, [
+            .next(15, RepositorySampleData.appleRepository)
+        ])
+    }
+    
     private func inputText(time: TestTime, _ word: String) {
         scheduler
             .createHotObservable([.next(time, word)])
