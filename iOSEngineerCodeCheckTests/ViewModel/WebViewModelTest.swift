@@ -120,5 +120,30 @@ final class WebViewModelTest: XCTestCase {
                 .next(10, WebLoadError.notConnectedToInternet)
             ])
         }
+        
+        // スケジューラをリセット
+        scheduler = TestScheduler(initialClock: 0)
+                
+        XCTContext.runActivity(named: "不明なエラー") { _ in
+            let loadFail = scheduler.createObserver(WebLoadError.self)
+            
+            viewModel = WebViewModel()
+            output    = viewModel.transform(input: input)
+            
+            output.loadFail
+                .drive(loadFail)
+                .disposed(by: disposeBag)
+            
+            scheduler
+                .createHotObservable([.next(10, (WKNavigation(), NSError(domain: "", code: -1010)))])
+                .bind(to: didFailLoad)
+                .disposed(by: disposeBag)
+            
+            scheduler.start()
+            
+            XCTAssertEqual(loadFail.events, [
+                .next(10, WebLoadError.unknown)
+            ])
+        }
     }
 }
