@@ -25,7 +25,12 @@ extension GitHubAPI: GitHubAPIProtocol {
         return self.provider.rx.request(.repository(keyword: keyword))
             .map { response in
                 if (200..<300).contains(response.statusCode) {
-                    return try JSONDecoder().decode(SearchResponse<GitHubRepository>.self,
+                    let decoder = JSONDecoder()
+                    // Dateのフォーマット型を指定
+                    // createdAt, updatedAtをDate型としてデコードできるようにするため
+                    decoder.dateDecodingStrategy = .iso8601
+                    
+                    return try decoder.decode(SearchResponse<GitHubRepository>.self,
                                                     from: response.data).items
                 }
                 
