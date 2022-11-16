@@ -36,6 +36,8 @@ final class RepositoryDetailViewController: UITableViewController {
     
     private var repository: GitHubRepository!
     
+    private lazy var viewModel = RepositoryDetailViewModel(repository: repository)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
