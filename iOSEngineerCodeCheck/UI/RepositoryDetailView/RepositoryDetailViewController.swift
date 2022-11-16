@@ -41,6 +41,8 @@ final class RepositoryDetailViewController: UITableViewController {
     private let disposeBag = DisposeBag()
     private lazy var viewModel = RepositoryDetailViewModel(repository: repository)
     
+    // MARK: - Lifecycle Method
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,6 +50,12 @@ final class RepositoryDetailViewController: UITableViewController {
         setUserImage()
         bindViewModel()
     }
+}
+
+
+// MARK: - Initialized Method
+
+extension RepositoryDetailViewController {
     
     private func setLabels() {
         titleLabel.text       = repository.fullName
