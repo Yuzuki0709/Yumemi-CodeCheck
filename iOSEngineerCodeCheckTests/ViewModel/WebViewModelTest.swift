@@ -33,4 +33,23 @@ final class WebViewModelTest: XCTestCase {
         viewModel = WebViewModel()
         output    = viewModel.transform(input: input)
     }
+    
+    /// 画面が表示された時に、ロードが開始されることを確認するテスト
+    func testLoading() {
+        let loading = scheduler.createObserver(Void.self)
+        
+        scheduler
+            .createHotObservable([.next(10, WKNavigation())])
+            .bind(to: didStartLoad)
+            .disposed(by: disposeBag)
+        
+        output.loading
+            .drive(loading)
+            .disposed(by: disposeBag)
+        
+        scheduler.start()
+        
+        XCTAssertEqual(loading.events[0].time, TestTime(10))
+        XCTAssertEqual(loading.events.count, 1)
+    }
 }
