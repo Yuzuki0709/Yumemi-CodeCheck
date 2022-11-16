@@ -22,7 +22,9 @@ extension RepositoryDetailViewModel: ViewModelType {
     
     struct Output {
         let isExistHomepage: Driver<Bool>
+        let isExistReadme:   Driver<Bool>
         let goHomepageView:  Driver<URL>
+        let goReadmeView:    Driver<URL>
     }
     
     func transform(input: Input) -> Output {
@@ -30,7 +32,9 @@ extension RepositoryDetailViewModel: ViewModelType {
         var homepageURL: URL? = nil
         
         let isExistHomepage = BehaviorRelay<Bool>(value: false)
+        let isExistReadme   = BehaviorRelay<Bool>(value: false)
         let goHomepageView  = PublishRelay<URL>()
+        let goReadmeView    = PublishRelay<URL>()
         
         input.viewWillAppear
             .subscribe(onNext: { [weak self] in
@@ -57,7 +61,9 @@ extension RepositoryDetailViewModel: ViewModelType {
         
         return Output(
             isExistHomepage: isExistHomepage.asDriver(),
-            goHomepageView: goHomepageView.asDriver(onErrorDriveWith: .empty())
+            isExistReadme: isExistReadme.asDriver(),
+            goHomepageView: goHomepageView.asDriver(onErrorDriveWith: .empty()),
+            goReadmeView: goReadmeView.asDriver(onErrorDriveWith: .empty())
         )
     }
 }
