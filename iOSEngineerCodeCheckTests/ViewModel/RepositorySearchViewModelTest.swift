@@ -36,4 +36,11 @@ final class RepositorySearchViewModelTest: XCTestCase {
             .bind(to: searchText)
             .disposed(by: disposeBag)
     }
+    
+    private func searchButtonTap(time: TestTime) {
+        scheduler
+            .createHotObservable([.next(time, Void())])
+            .bind(to: searchButtonTapped)
+            .disposed(by: disposeBag)
+    }
 }
