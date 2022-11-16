@@ -40,6 +40,15 @@ final class RepositorySearchPage: PageObject {
         searchBar.typeText(keyword)
         searchButton.tap()
     }
+    
+    func goToDetailView() -> RepositoryDetailPage {
+        searchRepository(keyword: "Swift")
+        _ = app.waitForExistence(timeout: 5)
+        
+        firstCell.tap()
+        
+        return RepositoryDetailPage(application: app)
+    }
 }
 
 extension RepositorySearchPage {
