@@ -31,4 +31,8 @@ extension RepositoryDetailPage {
     var existsPage: Bool {
         return detailTableView.exists
     }
+    
+    var existsHomepageCell: Bool {
+        return homepageCell.exists
+    }
 }
