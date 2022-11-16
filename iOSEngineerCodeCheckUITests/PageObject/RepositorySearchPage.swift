@@ -44,6 +44,6 @@ final class RepositorySearchPage: PageObject {
 
 extension RepositorySearchPage {
     var existsPage: Bool {
-        return true
+        return repositoryTableView.exists
     }
 }
