@@ -4,7 +4,7 @@ final class RepositorySearchPage: PageObject {
     
     private enum IDs {
         static let searchBar           = "search_searchresult_animationview"
-        static let serachButton        = "Search"
+        static let searchButton        = "Search"
         static let repositoryTableView = "search_repositorylist_tableview"
         static let animationView       = "search_searchresult_animationview"
     }
@@ -20,7 +20,7 @@ final class RepositorySearchPage: PageObject {
     }
     
     private var searchButton: XCUIElement {
-        return app.buttons[IDs.serachButton].firstMatch
+        return app.buttons[IDs.searchButton].firstMatch
     }
     
     private var repositoryTableView: XCUIElement {
