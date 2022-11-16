@@ -494,7 +494,7 @@
                                                 <constraint firstItem="x1i-CU-B8z" firstAttribute="leading" secondItem="v03-14-w8D" secondAttribute="leading" constant="10" id="xjT-S7-kHT"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration">
+                                        <accessibility key="accessibilityConfiguration" identifier="detail_homepage_cell">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
                                         <gestureRecognizers/>
@@ -545,13 +545,16 @@
                                                 <constraint firstItem="FnB-nE-Fv0" firstAttribute="leading" secondItem="tXP-ZC-cVs" secondAttribute="leading" constant="10" id="pry-FV-lwt"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration">
+                                        <accessibility key="accessibilityConfiguration" identifier="detail_readme_cell">
                                             <bool key="isElement" value="YES"/>
                                         </accessibility>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="accessibilityIdentifier" value="detail_showdetail_tableview"/>
+                        </userDefinedRuntimeAttributes>
                     </tableView>
                     <connections>
                         <outlet property="createdLabel" destination="SP6-cS-qf4" id="9La-OJ-RuR"/>
