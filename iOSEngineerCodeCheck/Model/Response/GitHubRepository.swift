@@ -2,6 +2,7 @@ import Foundation
 
 public struct GitHubRepository: Codable {
     public let id             : Int
+    public let name           : String
     public let fullName       : String
     public let owner          : Owner
     public let description    : String?
@@ -17,6 +18,7 @@ public struct GitHubRepository: Codable {
     
     enum CodingKeys: String, CodingKey {
         case id
+        case name
         case fullName        = "full_name"
         case owner
         case description
