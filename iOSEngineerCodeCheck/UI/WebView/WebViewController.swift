@@ -40,6 +40,13 @@ final class WebViewController: UIViewController {
                 self.activityIndecatorView.startAnimating()
             })
             .disposed(by: disposeBag)
+        
+        output.loadFinish
+            .drive(onNext: { [weak self] in
+                guard let self = self else { return }
+                self.activityIndecatorView.stopAnimating()
+            })
+            .disposed(by: disposeBag)
     }
 }
 
