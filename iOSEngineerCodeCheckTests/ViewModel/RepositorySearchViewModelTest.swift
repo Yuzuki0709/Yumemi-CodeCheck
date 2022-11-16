@@ -29,4 +29,11 @@ final class RepositorySearchViewModelTest: XCTestCase {
             selectedRepository: selectedRepository.asObservable()
         )
     }
+    
+    private func inputText(time: TestTime, _ word: String) {
+        scheduler
+            .createHotObservable([.next(time, word)])
+            .bind(to: searchText)
+            .disposed(by: disposeBag)
+    }
 }
