@@ -33,4 +33,11 @@ final class RepositoryDetailViewModelTest: XCTestCase {
             .bind(to: viewWillAppear)
             .disposed(by: disposeBag)
     }
+    
+    private func tableCellTap(time: TestTime, _ indexPath: IndexPath) {
+        scheduler
+            .createHotObservable([.next(time, indexPath)])
+            .bind(to: tableCellTapped)
+            .disposed(by: disposeBag)
+    }
 }
