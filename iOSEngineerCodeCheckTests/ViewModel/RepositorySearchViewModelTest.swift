@@ -30,6 +30,27 @@ final class RepositorySearchViewModelTest: XCTestCase {
         )
     }
     
+    /// レポジトリ名を検索して、レポジトリの配列が返ってくることを確認するテスト
+    func testSearchRepository() {
+        let repositories = scheduler.createObserver([GitHubRepository].self)
+        
+        viewModel = RepositorySearchViewModel(githubAPI: GitHubAPIMock())
+        output    = viewModel.transform(input: input)
+        
+        output.repositories
+            .drive(repositories)
+            .disposed(by: disposeBag)
+        
+        inputText(time: 5, "Swift")
+        searchButtonTap(time: 10)
+        
+        scheduler.start()
+        
+        XCTAssertEqual(repositories.events, [
+            .next(10, RepositorySampleData.expectedData)
+        ])
+    }
+    
     private func inputText(time: TestTime, _ word: String) {
         scheduler
             .createHotObservable([.next(time, word)])
