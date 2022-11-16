@@ -34,6 +34,12 @@ final class RepositorySearchPage: PageObject {
     private var animationView: XCUIElement {
         return app.otherElements[IDs.animationView].firstMatch
     }
+    
+    func searchRepository(keyword: String) {
+        searchBar.tap()
+        searchBar.typeText(keyword)
+        searchButton.tap()
+    }
 }
 
 extension RepositorySearchPage {
