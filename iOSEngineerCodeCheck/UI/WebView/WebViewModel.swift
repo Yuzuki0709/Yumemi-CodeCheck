@@ -33,6 +33,13 @@ extension WebViewModel: ViewModelType {
             .subscribe(onNext: { _ in loadFinish.accept(()) })
             .disposed(by: disposeBag)
         
+        input.didFailLoad
+            .subscribe(onNext: { (result: (_: WKNavigation, error: Error)) in
+                let error = result.error as NSError
+                loadFail.accept(WebLoadError(errorCode: error.code))
+            })
+            .disposed(by: disposeBag)
+        
         return Output(
             loading: loading.asDriver(onErrorDriveWith: .empty()),
             loadFinish: loadFinish.asDriver(onErrorDriveWith: .empty()),
