@@ -51,6 +51,38 @@ final class RepositorySearchViewModelTest: XCTestCase {
         ])
     }
     
+    /// エラーが返ってくることを確認するテスト
+    func testSearchResultError() {
+        enum TestError: Error {
+            case dummyError1
+            case dummyError2
+        }
+        
+        var error: Error!
+        let expectation = expectation(description: "非同期処理")
+        
+        viewModel = RepositorySearchViewModel(githubAPI: GitHubAPIMock(error: TestError.dummyError1))
+        output    = viewModel.transform(input: input)
+        
+        // error = try! output.error.toBlocking().first!
+        // 上の方法ではうまくいかなかったので、expectationを使って非同期テストをしている
+        output.error
+            .drive(onNext: {
+                error = $0
+                expectation.fulfill()
+            })
+            .disposed(by: disposeBag)
+        
+        inputText(time: 5, "")
+        searchButtonTap(time: 10)
+        
+        scheduler.start()
+        self.wait(for: [expectation], timeout: 10.0)
+        
+        XCTAssertEqual(error as! TestError, TestError.dummyError1)
+        XCTAssertNotEqual(error as! TestError, TestError.dummyError2)
+    }
+    
     private func inputText(time: TestTime, _ word: String) {
         scheduler
             .createHotObservable([.next(time, word)])
