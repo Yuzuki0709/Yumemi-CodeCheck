@@ -69,6 +69,7 @@ final class RepositoryDetailViewController: UITableViewController {
         
         userImageView.kf.setImage(with: URL(string: repository.owner.avatarURL),
                                   placeholder: UIImage(systemName: "photo"))
+        userImageView.clipCircle()
     }
 }
 
