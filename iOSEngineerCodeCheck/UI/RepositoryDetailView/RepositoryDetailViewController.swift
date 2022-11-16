@@ -54,6 +54,7 @@ final class RepositoryDetailViewController: UITableViewController {
         createdLabel.text  = DateHelper.shared.formatToString(date: repository.createdAt)
         updatedLabel.text  = DateHelper.shared.formatToString(date: repository.updatedAt)
         homepageLabel.text = repository.homepage
+        sizeLabel.text     = ByteHelper.shared.formatToString(byte: Int64(repository.size))
         
         // 長さによって大きさを変更する
         titleLabel.adjustsFontSizeToFitWidth = true
