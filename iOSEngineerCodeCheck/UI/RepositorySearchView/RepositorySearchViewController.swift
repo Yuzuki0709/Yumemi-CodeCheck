@@ -27,7 +27,11 @@ final class RepositorySearchViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     private lazy var animationView: LottieAnimationView = {
-        return setAnimationView()
+        let animationView = setAnimationView()
+        // テスト用のIdentifierを設定
+        animationView.accessibilityIdentifier = "search_searchresult_animationview"
+        
+        return animationView
     }()
     
     // MARK: - Lifecycle Method
