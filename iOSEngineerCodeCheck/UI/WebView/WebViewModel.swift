@@ -25,6 +25,14 @@ extension WebViewModel: ViewModelType {
         let loadFinish = PublishRelay<Void>()
         let loadFail   = PublishRelay<WebLoadError>()
         
+        input.didStartLoad
+            .subscribe(onNext: { _ in loading.accept(()) })
+            .disposed(by: disposeBag)
+        
+        input.didFinishLoad
+            .subscribe(onNext: { _ in loadFinish.accept(()) })
+            .disposed(by: disposeBag)
+        
         return Output(
             loading: loading.asDriver(onErrorDriveWith: .empty()),
             loadFinish: loadFinish.asDriver(onErrorDriveWith: .empty()),
