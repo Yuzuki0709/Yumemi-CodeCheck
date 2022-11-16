@@ -1,5 +1,7 @@
 import UIKit
 import WebKit
+import RxSwift
+import RxCocoa
 
 final class WebViewController: UIViewController {
     
@@ -14,7 +16,8 @@ final class WebViewController: UIViewController {
     
     private var url: URL!
     
-    private let viewModel = WebViewModel()
+    private let viewModel  = WebViewModel()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         webView.load(URLRequest(url: url))
