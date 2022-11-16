@@ -27,6 +27,42 @@ final class RepositoryDetailViewModelTest: XCTestCase {
         )
     }
     
+    /// ホームページとREADMEの有無を正しく判別できることを確認するテスト
+    func testIsExistCell() {
+        XCTContext.runActivity(named: "両方存在する場合") { _ in
+            let isExistHomepage = scheduler.createObserver(Bool.self)
+            let isExistReadme   = scheduler.createObserver(Bool.self)
+            
+            viewModel = RepositoryDetailViewModel(
+                repository: RepositorySampleData.appleRepository,
+                githubAPI: GitHubAPIMock()
+            )
+            output    = viewModel.transform(input: input)
+            
+            output.isExistHomepage
+                .drive(isExistHomepage)
+                .disposed(by: disposeBag)
+            
+            output.isExistReadme
+                .drive(isExistReadme)
+                .disposed(by: disposeBag)
+            
+            viewWillAppear(time: 10)
+            
+            scheduler.start()
+            
+            XCTAssertEqual(isExistHomepage.events, [
+                .next(0, false),  // BehaviorRelayのため、購読時にfalseが流れる
+                .next(10, true)
+            ])
+            
+            XCTAssertEqual(isExistReadme.events, [
+                .next(0, false),  // 上記と同じ
+                .next(10, true)
+            ])
+        }
+    }
+    
     private func viewWillAppear(time: TestTime) {
         scheduler
             .createHotObservable([.next(time, Void())])
