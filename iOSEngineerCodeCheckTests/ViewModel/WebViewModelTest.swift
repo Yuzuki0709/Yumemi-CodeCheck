@@ -15,4 +15,21 @@ final class WebViewModelTest: XCTestCase {
     var viewModel:     WebViewModel!
     var input:         WebViewModel.Input!
     var output:        WebViewModel.Output!
+    
+    override func setUp() {
+        scheduler  = TestScheduler(initialClock: 0)
+        disposeBag = DisposeBag()
+        
+        didStartLoad  = PublishRelay<WKNavigation>()
+        didFinishLoad = PublishRelay<WKNavigation>()
+        didFailLoad   = PublishRelay<(WKNavigation, Error)>()
+        
+        input  = WebViewModel.Input(
+            didStartLoad: didStartLoad.asObservable(),
+            didFinishLoad: didFinishLoad.asObservable(),
+            didFailLoad: didFailLoad.asObservable()
+        )
+        
+        output = viewModel.transform(input: input)
+    }
 }
