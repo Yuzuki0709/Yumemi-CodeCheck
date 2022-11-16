@@ -37,6 +37,7 @@
 		A2505042292472E8001533DF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2505041292472E8001533DF /* WebKit.framework */; };
 		A25050452924735B001533DF /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A25050442924735A001533DF /* WebView.storyboard */; };
 		A2505047292473A8001533DF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2505046292473A8001533DF /* WebViewController.swift */; };
+		A2505049292491A3001533DF /* RepositoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2505048292491A3001533DF /* RepositoryDetailViewModel.swift */; };
 		BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -88,6 +89,7 @@
 		A2505041292472E8001533DF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A25050442924735A001533DF /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		A2505046292473A8001533DF /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		A2505048292491A3001533DF /* RepositoryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewModel.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */,
+				A2505048292491A3001533DF /* RepositoryDetailViewModel.swift */,
 				A2505021292394E6001533DF /* RepositoryDetailView.storyboard */,
 			);
 			path = RepositoryDetailView;
@@ -465,6 +468,7 @@
 				A250501929238B22001533DF /* ViewModelType.swift in Sources */,
 				BFD945E3244DC5E80012785A /* RepositorySearchViewController.swift in Sources */,
 				A2505047292473A8001533DF /* WebViewController.swift in Sources */,
+				A2505049292491A3001533DF /* RepositoryDetailViewModel.swift in Sources */,
 				A25050092923690E001533DF /* GitHubAPI.swift in Sources */,
 				A250502D2923A196001533DF /* UIColor.swift in Sources */,
 				A250502A29239FF7001533DF /* LanguageIcon.swift in Sources */,
