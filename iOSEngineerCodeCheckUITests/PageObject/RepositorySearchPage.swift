@@ -19,6 +19,10 @@ final class RepositorySearchPage: PageObject {
         return app.otherElements[IDs.searchBar].firstMatch
     }
     
+    private var searchButton: XCUIElement {
+        return app.buttons[IDs.serachButton].firstMatch
+    }
+    
     private var repositoryTableView: XCUIElement {
         return app.tables[IDs.repositoryTableView].firstMatch
     }
