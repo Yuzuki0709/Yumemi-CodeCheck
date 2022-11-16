@@ -61,6 +61,45 @@ final class RepositoryDetailViewModelTest: XCTestCase {
                 .next(10, true)
             ])
         }
+        
+        // スケジューラをリセット
+        scheduler = TestScheduler(initialClock: 0)
+        
+        XCTContext.runActivity(named: "両方存在しない場合") { _ in
+            enum TestError: Error {
+                case dummyError
+            }
+            
+            let isExistHomepage = scheduler.createObserver(Bool.self)
+            let isExistReadme   = scheduler.createObserver(Bool.self)
+            
+            viewModel = RepositoryDetailViewModel(
+                repository: RepositorySampleData.nullRepository,
+                githubAPI: GitHubAPIMock(error: TestError.dummyError)
+            )
+            output    = viewModel.transform(input: input)
+            
+            output.isExistHomepage
+                .drive(isExistHomepage)
+                .disposed(by: disposeBag)
+            
+            output.isExistReadme
+                .drive(isExistReadme)
+                .disposed(by: disposeBag)
+            
+            viewWillAppear(time: 10)
+            
+            scheduler.start()
+            
+            XCTAssertEqual(isExistHomepage.events, [
+                .next(0, false)
+            ])
+            
+            XCTAssertEqual(isExistReadme.events, [
+                .next(0, false)
+            ])
+        }
+                
     }
     
     private func viewWillAppear(time: TestTime) {
