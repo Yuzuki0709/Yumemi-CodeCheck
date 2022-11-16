@@ -40,6 +40,7 @@
 		A2505049292491A3001533DF /* RepositoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2505048292491A3001533DF /* RepositoryDetailViewModel.swift */; };
 		A250504B29249525001533DF /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250504A29249525001533DF /* UIViewController+Rx.swift */; };
 		A250504D29249920001533DF /* GitHubReadme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250504C29249920001533DF /* GitHubReadme.swift */; };
+		A2D71D742924C9B600517B55 /* WebViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D71D732924C9B600517B55 /* WebViewModel.swift */; };
 		BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -94,6 +95,7 @@
 		A2505048292491A3001533DF /* RepositoryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewModel.swift; sourceTree = "<group>"; };
 		A250504A29249525001533DF /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		A250504C29249920001533DF /* GitHubReadme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubReadme.swift; sourceTree = "<group>"; };
+		A2D71D732924C9B600517B55 /* WebViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewModel.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				A2505046292473A8001533DF /* WebViewController.swift */,
+				A2D71D732924C9B600517B55 /* WebViewModel.swift */,
 				A25050442924735A001533DF /* WebView.storyboard */,
 			);
 			path = WebView;
@@ -477,6 +480,7 @@
 				A2505049292491A3001533DF /* RepositoryDetailViewModel.swift in Sources */,
 				A250504B29249525001533DF /* UIViewController+Rx.swift in Sources */,
 				A25050092923690E001533DF /* GitHubAPI.swift in Sources */,
+				A2D71D742924C9B600517B55 /* WebViewModel.swift in Sources */,
 				A250502D2923A196001533DF /* UIColor.swift in Sources */,
 				A250502A29239FF7001533DF /* LanguageIcon.swift in Sources */,
 				A250500529236376001533DF /* GitHubAPITarget.swift in Sources */,
