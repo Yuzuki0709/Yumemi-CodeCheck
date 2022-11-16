@@ -22,7 +22,12 @@ final class WebViewController: UIViewController {
     override func viewDidLoad() {
         webView.load(URLRequest(url: url))
         
+        setActivityIndecatorView()
         bindViewModel()
+    }
+    
+    private func setActivityIndecatorView() {
+        activityIndecatorView.hidesWhenStopped = true
     }
     
     private func bindViewModel() {
