@@ -3,6 +3,14 @@ enum WebLoadError: Error {
     case notConnectedToInternet
     case unknown
     
+    init(errorCode: Int) {
+        switch errorCode {
+        case -1000: self = .badURL
+        case -1009: self = .notConnectedToInternet
+        default:    self = .unknown
+        }
+    }
+    
     func description() -> String {
         switch self {
         case .badURL:
