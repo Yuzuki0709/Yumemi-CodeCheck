@@ -14,6 +14,8 @@ final class WebViewController: UIViewController {
     
     private var url: URL!
     
+    private let viewModel = WebViewModel()
+    
     override func viewDidLoad() {
         webView.load(URLRequest(url: url))
     }
