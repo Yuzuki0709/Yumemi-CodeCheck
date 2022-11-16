@@ -43,6 +43,16 @@ extension RepositoryDetailViewModel: ViewModelType {
             })
             .disposed(by: disposeBag)
         
+        input.tableCellTapped
+            .subscribe(onNext: { indexPath in
+                if indexPath.row == 0 {
+                    // ホームページセルはホームページのURLが有効な場合のみ表示されるので、
+                    // 強制アンラップにしている
+                    goHomepageView.accept(homepageURL!)
+                }
+            })
+            .disposed(by: disposeBag)
+        
         return Output(
             isExistHomepage: isExistHomepage.asDriver(),
             goHomepageView: goHomepageView.asDriver(onErrorDriveWith: .empty())
