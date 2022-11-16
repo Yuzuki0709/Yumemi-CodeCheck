@@ -180,6 +180,13 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		A247581E29259714000F6E22 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A2504FFA29236160001533DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				A247581B29259528000F6E22 /* Mock */,
+				A247581E29259714000F6E22 /* ViewModel */,
 				BFD945F5244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift */,
 				BFD945F7244DC5EB0012785A /* Info.plist */,
 				A2475817292592DB000F6E22 /* RepositorySampleData.swift */,
