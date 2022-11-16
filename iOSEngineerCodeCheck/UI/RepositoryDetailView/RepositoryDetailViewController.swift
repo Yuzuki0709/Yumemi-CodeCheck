@@ -8,6 +8,8 @@
 
 import UIKit
 import Kingfisher
+import RxSwift
+import RxCocoa
 
 final class RepositoryDetailViewController: UITableViewController {
     
@@ -36,6 +38,7 @@ final class RepositoryDetailViewController: UITableViewController {
     
     private var repository: GitHubRepository!
     
+    private let disposeBag = DisposeBag()
     private lazy var viewModel = RepositoryDetailViewModel(repository: repository)
     
     override func viewDidLoad() {
