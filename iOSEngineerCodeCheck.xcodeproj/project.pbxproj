@@ -171,6 +171,7 @@
 				A250502929239FF7001533DF /* LanguageIcon.swift */,
 				A250501B292393B9001533DF /* RepositorySearchView */,
 				A250501C292393D6001533DF /* RepositoryDetailView */,
+				A250504329247316001533DF /* WebView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -239,6 +240,13 @@
 				A2505041292472E8001533DF /* WebKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A250504329247316001533DF /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		BFD945D2244DC5E80012785A = {
