@@ -3,6 +3,7 @@ import Moya
 
 enum GitHubAPITarget {
     case repository(keyword: String)
+    case readme(ownerName: String, repositoryName: String)
 }
 
 extension GitHubAPITarget: TargetType {
@@ -14,12 +15,14 @@ extension GitHubAPITarget: TargetType {
         switch self {
         case .repository:
             return "/search/repositories"
+        case .readme(let ownerName, let repositoryName):
+            return "/repos/\(ownerName)/\(repositoryName)/readme"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .repository:
+        case .repository, .readme:
             return .get
         }
     }
@@ -28,6 +31,8 @@ extension GitHubAPITarget: TargetType {
         switch self {
         case .repository(let keyword):
             return .requestParameters(parameters: ["q": keyword], encoding: URLEncoding.default)
+        case .readme:
+            return .requestPlain
         }
     }
     
@@ -87,6 +92,12 @@ extension GitHubAPITarget {
             }
             """.data(using: .utf8)!
             
+        case .readme:
+            return """
+            {
+                "html_url": "https://github.com/apple/swift/blob/main/README.md"
+            }
+            """.data(using: .utf8)!
         }
     }
 }
