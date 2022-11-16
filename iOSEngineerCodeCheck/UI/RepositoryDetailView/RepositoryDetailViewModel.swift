@@ -12,6 +12,12 @@ final class RepositoryDetailViewModel {
         self.repository = repository
         self.githubAPI  = githubAPI
     }
+    
+    /// どのセルがタップされたかを判別するための列挙型
+    private enum TableCellIndexPath: Int {
+        case homepageCell = 0
+        case readmeCell   = 1
+    }
 }
 
 extension RepositoryDetailViewModel: ViewModelType {
@@ -74,11 +80,11 @@ extension RepositoryDetailViewModel: ViewModelType {
         // もっといい方法がありそう
         input.tableCellTapped
             .subscribe(onNext: { indexPath in
-                if indexPath.row == 0 {
+                if indexPath.row == TableCellIndexPath.homepageCell.rawValue {
                     // ホームページセルはホームページのURLが有効な場合のみ表示されるので、
                     // 強制アンラップにしている
                     goHomepageView.accept(homepageURL!)
-                } else if indexPath.row == 1 {
+                } else if indexPath.row == TableCellIndexPath.readmeCell.rawValue {
                     // 上と同じ理由で強制アンラップしている
                     goReadmeView.accept(readmeURL!)
                 }
