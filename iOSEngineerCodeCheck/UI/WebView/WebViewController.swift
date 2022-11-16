@@ -21,6 +21,18 @@ final class WebViewController: UIViewController {
     
     override func viewDidLoad() {
         webView.load(URLRequest(url: url))
+        
+        bindViewModel()
+    }
+    
+    private func bindViewModel() {
+        let input = WebViewModel.Input(
+            didStartLoad: webView.rx.didStartLoad,
+            didFinishLoad: webView.rx.didFinishLoad,
+            didFailLoad: webView.rx.didFailProvisionalNavigation
+        )
+        
+        let output = viewModel.transform(input: input)
     }
 }
 
