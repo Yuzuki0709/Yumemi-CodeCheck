@@ -29,6 +29,6 @@ final class RepositoryDetailPage: PageObject {
 
 extension RepositoryDetailPage {
     var existsPage: Bool {
-        return true
+        return detailTableView.exists
     }
 }
