@@ -34,6 +34,7 @@
 		A25050392923B8FE001533DF /* RxSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25050382923B8FE001533DF /* RxSwift.swift */; };
 		A250503D292449C9001533DF /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250503C292449C9001533DF /* DateHelper.swift */; };
 		A250503F29246511001533DF /* ByteHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A250503E29246511001533DF /* ByteHelper.swift */; };
+		A2505042292472E8001533DF /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2505041292472E8001533DF /* WebKit.framework */; };
 		BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -82,6 +83,7 @@
 		A250503A29243ADB001533DF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A250503C292449C9001533DF /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		A250503E29246511001533DF /* ByteHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByteHelper.swift; sourceTree = "<group>"; };
+		A2505041292472E8001533DF /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				A250500C29236E98001533DF /* Kingfisher in Frameworks */,
 				A25050032923634E001533DF /* RxMoya in Frameworks */,
 				A250501129238A9B001533DF /* RxCocoa in Frameworks */,
+				A2505042292472E8001533DF /* WebKit.framework in Frameworks */,
 				A25050012923634E001533DF /* Moya in Frameworks */,
 				A25050302923AE21001533DF /* PKHUD in Frameworks */,
 				A25050352923B13E001533DF /* Lottie in Frameworks */,
@@ -230,6 +233,14 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		A2505040292472E7001533DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2505041292472E8001533DF /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BFD945D2244DC5E80012785A = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +248,7 @@
 				BFD945F4244DC5EB0012785A /* iOSEngineerCodeCheckTests */,
 				BFD945FF244DC5EB0012785A /* iOSEngineerCodeCheckUITests */,
 				BFD945DC244DC5E80012785A /* Products */,
+				A2505040292472E7001533DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
