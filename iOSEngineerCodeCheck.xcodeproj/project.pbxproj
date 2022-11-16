@@ -47,6 +47,7 @@
 		A2D71D7D2924EA6B00517B55 /* RepositorySearchPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D71D7C2924EA6B00517B55 /* RepositorySearchPage.swift */; };
 		A2D71D7F2924EDB600517B55 /* RepositorySearchViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D71D7E2924EDB600517B55 /* RepositorySearchViewUITest.swift */; };
 		A2D71D812924FDFE00517B55 /* RepositoryDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D71D802924FDFE00517B55 /* RepositoryDetailPage.swift */; };
+		A2D71D832925018700517B55 /* RepositoryDetailViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D71D822925018700517B55 /* RepositoryDetailViewUITest.swift */; };
 		BF0A658D244F2A3B00280FA6 /* RepositoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */; };
 		BFD945DF244DC5E80012785A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945DE244DC5E80012785A /* AppDelegate.swift */; };
 		BFD945E1244DC5E80012785A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD945E0244DC5E80012785A /* SceneDelegate.swift */; };
@@ -108,6 +109,7 @@
 		A2D71D7C2924EA6B00517B55 /* RepositorySearchPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchPage.swift; sourceTree = "<group>"; };
 		A2D71D7E2924EDB600517B55 /* RepositorySearchViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositorySearchViewUITest.swift; sourceTree = "<group>"; };
 		A2D71D802924FDFE00517B55 /* RepositoryDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailPage.swift; sourceTree = "<group>"; };
+		A2D71D822925018700517B55 /* RepositoryDetailViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewUITest.swift; sourceTree = "<group>"; };
 		BF0A658C244F2A3B00280FA6 /* RepositoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDetailViewController.swift; sourceTree = "<group>"; };
 		BFD945DB244DC5E80012785A /* iOSEngineerCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSEngineerCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFD945DE244DC5E80012785A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 				A2D71D792924E9C600517B55 /* PageObject */,
 				BFD94600244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift */,
 				A2D71D7E2924EDB600517B55 /* RepositorySearchViewUITest.swift */,
+				A2D71D822925018700517B55 /* RepositoryDetailViewUITest.swift */,
 				BFD94602244DC5EC0012785A /* Info.plist */,
 			);
 			path = iOSEngineerCodeCheckUITests;
@@ -544,6 +547,7 @@
 				A2D71D7D2924EA6B00517B55 /* RepositorySearchPage.swift in Sources */,
 				BFD94601244DC5EC0012785A /* iOSEngineerCodeCheckUITests.swift in Sources */,
 				A2D71D812924FDFE00517B55 /* RepositoryDetailPage.swift in Sources */,
+				A2D71D832925018700517B55 /* RepositoryDetailViewUITest.swift in Sources */,
 				A2D71D7B2924E9F200517B55 /* PageObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
