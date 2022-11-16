@@ -52,4 +52,23 @@ final class WebViewModelTest: XCTestCase {
         XCTAssertEqual(loading.events[0].time, TestTime(10))
         XCTAssertEqual(loading.events.count, 1)
     }
+    
+    /// ロードが終わった時に、loadFinishに値が流れることを確認するテスト
+    func testLoadFinish() {
+        let loadFinish = scheduler.createObserver(Void.self)
+        
+        scheduler
+            .createHotObservable([.next(10, WKNavigation())])
+            .bind(to: didFinishLoad)
+            .disposed(by: disposeBag)
+        
+        output.loadFinish
+            .drive(loadFinish)
+            .disposed(by: disposeBag)
+        
+        scheduler.start()
+        
+        XCTAssertEqual(loadFinish.events[0].time, TestTime(10))
+        XCTAssertEqual(loadFinish.events.count, 1)
+    }
 }
