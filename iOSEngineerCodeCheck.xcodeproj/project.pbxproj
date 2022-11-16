@@ -170,6 +170,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A247581B29259528000F6E22 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		A2504FFA29236160001533DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +349,7 @@
 		BFD945F4244DC5EB0012785A /* iOSEngineerCodeCheckTests */ = {
 			isa = PBXGroup;
 			children = (
+				A247581B29259528000F6E22 /* Mock */,
 				BFD945F5244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift */,
 				BFD945F7244DC5EB0012785A /* Info.plist */,
 				A2475817292592DB000F6E22 /* RepositorySampleData.swift */,
