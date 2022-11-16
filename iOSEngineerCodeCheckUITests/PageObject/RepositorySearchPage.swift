@@ -3,7 +3,7 @@ import XCTest
 final class RepositorySearchPage: PageObject {
     
     private enum IDs {
-        static let searchBar           = "search_searchresult_animationview"
+        static let searchBar           = "search_searchword_searchbar"
         static let searchButton        = "Search"
         static let repositoryTableView = "search_repositorylist_tableview"
         static let animationView       = "search_searchresult_animationview"
