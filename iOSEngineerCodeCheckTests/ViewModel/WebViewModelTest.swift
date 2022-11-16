@@ -71,4 +71,29 @@ final class WebViewModelTest: XCTestCase {
         XCTAssertEqual(loadFinish.events[0].time, TestTime(10))
         XCTAssertEqual(loadFinish.events.count, 1)
     }
+    
+    /// ロードが失敗した時に、loadFailにエラーが流れることを確認するテスト
+    func testLoadFail() {
+        XCTContext.runActivity(named: "不正なURL") { _ in
+            let loadFail = scheduler.createObserver(WebLoadError.self)
+            
+            viewModel = WebViewModel()
+            output    = viewModel.transform(input: input)
+            
+            output.loadFail
+                .drive(loadFail)
+                .disposed(by: disposeBag)
+            
+            scheduler
+                .createHotObservable([.next(10, (WKNavigation(), NSError(domain: "", code: -1000)))])
+                .bind(to: didFailLoad)
+                .disposed(by: disposeBag)
+            
+            scheduler.start()
+            
+            XCTAssertEqual(loadFail.events, [
+                .next(10, WebLoadError.badURL)
+            ])
+        }
+    }
 }
