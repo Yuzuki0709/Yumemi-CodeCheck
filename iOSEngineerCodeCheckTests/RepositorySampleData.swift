@@ -36,5 +36,21 @@ struct RepositorySampleData {
         forksCount: 1059,
         openIssuesCount: 0)
     
+    static let nullRepository = GitHubRepository(
+        id: 0,
+        name: "",
+        fullName: "",
+        owner: Owner(login: "", avatarURL: ""),
+        description: nil,
+        createdAt: Date(),
+        updatedAt: Date(),
+        homepage: nil,
+        size: 0,
+        stargazersCount: 0,
+        watchersCount: 0,
+        language: nil,
+        forksCount: 0,
+        openIssuesCount: 0)
+    
     static let expectedData: [GitHubRepository] = [Self.appleRepository, Self.openstackRepoisotry]
 }
