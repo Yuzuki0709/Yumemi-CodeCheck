@@ -199,8 +199,16 @@
 		A24758252925AFEB000F6E22 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A24758262925B029000F6E22 /* Stub */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		A24758262925B029000F6E22 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stub;
 			sourceTree = "<group>";
 		};
 		A2504FFA29236160001533DF /* Model */ = {
