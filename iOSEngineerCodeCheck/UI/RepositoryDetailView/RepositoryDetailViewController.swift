@@ -94,6 +94,14 @@ final class RepositoryDetailViewController: UITableViewController {
             })
             .disposed(by: disposeBag)
         
+        output.isExistReadme
+            .drive(onNext: { [weak self] isExist in
+                guard let self = self else { return }
+                // READMEがなければセルを表示しない
+                self.readmeCell.isHidden = !isExist
+            })
+            .disposed(by: disposeBag)
+        
         output.goHomepageView
             .drive(onNext: { [weak self] homepageURL in
                 guard let self = self else { return }
