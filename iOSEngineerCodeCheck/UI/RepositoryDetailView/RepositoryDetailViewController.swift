@@ -46,6 +46,7 @@ final class RepositoryDetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setTableView()
         setLabels()
         setUserImage()
         bindViewModel()
@@ -56,6 +57,15 @@ final class RepositoryDetailViewController: UITableViewController {
 // MARK: - Initialized Method
 
 extension RepositoryDetailViewController {
+    
+    private func setTableView() {
+        // セルがタップされた後に、選択状態を解除する
+        detailTableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                self?.detailTableView.deselectRow(at: indexPath, animated: true)
+            })
+            .disposed(by: disposeBag)
+    }
     
     private func setLabels() {
         titleLabel.text       = repository.fullName
