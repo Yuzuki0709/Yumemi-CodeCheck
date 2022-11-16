@@ -22,4 +22,15 @@ final class RepositoryDetailViewUITest: XCTestCase {
         XCTAssertTrue(repositoryDetailView.existsHomepageCell)
         XCTAssertTrue(repositoryDetailView.existsReadmeCell)
     }
+    
+    /// ホームページセルをタップした時に、ホームページが表示されることを確認するテスト
+    func testGoToHomepage() {
+        let repositoryDetailView = RepositorySearchPage(application: app).goToDetailView()
+        
+        _ = app.waitForExistence(timeout: 5)
+        
+        let homepageView = repositoryDetailView.goToHomepage()
+        
+        XCTAssertTrue(homepageView.existsPage)
+    }
 }
