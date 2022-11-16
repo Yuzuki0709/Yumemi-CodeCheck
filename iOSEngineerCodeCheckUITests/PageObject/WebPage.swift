@@ -11,6 +11,10 @@ final class WebPage: PageObject {
     required init(application: XCUIApplication) {
         self.app = application
     }
+    
+    private var webView: XCUIElement {
+        return app.webViews[IDs.webView].firstMatch
+    }
 }
 
 extension WebPage {
