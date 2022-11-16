@@ -9,6 +9,9 @@ final class WebViewController: UIViewController {
         return view
     }
     
+    @IBOutlet private weak var webView: WKWebView!
+    @IBOutlet private weak var activityIndecatorView: UIActivityIndicatorView!
+    
     private var url: URL!
 }
 

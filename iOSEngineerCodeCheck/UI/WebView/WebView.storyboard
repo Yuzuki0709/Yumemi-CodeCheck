@@ -40,6 +40,10 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="528-zR-3Rr" secondAttribute="bottom" id="hIh-9S-WWo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityIndecatorView" destination="OfJ-kX-vpp" id="bHJ-qU-Wt7"/>
+                        <outlet property="webView" destination="528-zR-3Rr" id="ayq-uE-VFV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
