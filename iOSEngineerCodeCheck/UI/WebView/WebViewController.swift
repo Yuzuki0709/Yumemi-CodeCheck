@@ -47,6 +47,15 @@ final class WebViewController: UIViewController {
                 self.activityIndecatorView.stopAnimating()
             })
             .disposed(by: disposeBag)
+        
+        output.loadFail
+            .drive(onNext: { [weak self] error in
+                guard let self = self else { return }
+                // エラーならアラートを表示する
+                self.displayNormalAlert(title: error.description(), message: nil)
+                self.activityIndecatorView.stopAnimating()
+            })
+            .disposed(by: disposeBag)
     }
 }
 
