@@ -102,6 +102,30 @@ final class RepositoryDetailViewModelTest: XCTestCase {
                 
     }
     
+    /// ホームページセルをタップした時に、そのURLが返ってくることを確認するテスト
+    func testTapHomepageCell() {
+        let goHomepageView = scheduler.createObserver(URL.self)
+        
+        viewModel = RepositoryDetailViewModel(
+            repository: RepositorySampleData.appleRepository,
+            githubAPI: GitHubAPIMock()
+        )
+        output    = viewModel.transform(input: input)
+        
+        output.goHomepageView
+            .drive(goHomepageView)
+            .disposed(by: disposeBag)
+        
+        viewWillAppear(time: 10)
+        tableCellTap(time: 15, IndexPath(row: 0, section: 0))
+        
+        scheduler.start()
+        
+        XCTAssertEqual(goHomepageView.events, [
+            .next(15, URL(string: RepositorySampleData.appleRepository.homepage!)!)
+        ])
+    }
+    
     private func viewWillAppear(time: TestTime) {
         scheduler
             .createHotObservable([.next(time, Void())])
