@@ -30,6 +30,7 @@ extension RepositoryDetailViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         
         var homepageURL: URL? = nil
+        var readmeURL:   URL? = nil
         
         let isExistHomepage = BehaviorRelay<Bool>(value: false)
         let isExistReadme   = BehaviorRelay<Bool>(value: false)
@@ -45,6 +46,26 @@ extension RepositoryDetailViewModel: ViewModelType {
                    !homepageURLString.isEmpty {
                     homepageURL = URL(string: homepageURLString)
                     isExistHomepage.accept(true)
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        // READMEがあるかどうかを判定
+        input.viewWillAppear
+            .flatMap { [unowned self] _ -> Observable<Event<GitHubReadme>> in
+                return self.githubAPI
+                    .searchReadme(ownerName: self.repository.owner.login,
+                                  repositoryName: self.repository.name)
+                    .materialize()
+            }
+            .subscribe(onNext: { event in
+                switch event {
+                case .next(let response):
+                    readmeURL = URL(string: response.htmlURL)
+                    isExistReadme.accept(true)
+                    
+                default:
+                    break
                 }
             })
             .disposed(by: disposeBag)
