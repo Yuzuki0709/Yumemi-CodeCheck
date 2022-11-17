@@ -48,7 +48,7 @@ extension GitHubAPITarget {
         case .repository:
             return """
             {
-                "total_count":
+                "total_count": 254623,
                 "items": [
                     {
                         "id": 44838949,
