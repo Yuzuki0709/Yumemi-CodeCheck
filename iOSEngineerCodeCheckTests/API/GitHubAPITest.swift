@@ -17,4 +17,24 @@ final class GitHubAPITest: XCTestCase {
         scheduler  = TestScheduler(initialClock: 0)
         disposeBag = DisposeBag()
     }
+    
+    func testSearchRepositories() {
+        XCTContext.runActivity(named: "正常に終了") { _ in
+            stub      = GitHubAPITargetProvider.stub200.provider
+            githubAPI = GitHubAPI(provider: stub)
+            
+            let repositories = try! githubAPI
+                .searchRepositories(keyword: "Swift")
+                .toBlocking()
+                .first()!
+            
+            XCTAssertEqual(repositories.count, 2)
+            
+            XCTAssertEqual(repositories[0].id, 44838949)
+            XCTAssertEqual(repositories[0].fullName, "apple/swift")
+            
+            XCTAssertEqual(repositories[1].id, 790019)
+            XCTAssertEqual(repositories[1].fullName, "openstack/swift")
+        }
+    }
 }
