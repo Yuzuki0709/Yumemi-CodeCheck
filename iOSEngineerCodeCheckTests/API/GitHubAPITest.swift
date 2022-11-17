@@ -36,5 +36,19 @@ final class GitHubAPITest: XCTestCase {
             XCTAssertEqual(repositories[1].id, 790019)
             XCTAssertEqual(repositories[1].fullName, "openstack/swift")
         }
+        
+        XCTContext.runActivity(named: "リクエストエラー") { _ in
+            stub      = GitHubAPITargetProvider.stub404.provider
+            githubAPI = GitHubAPI(provider: stub)
+            
+            let result = try! githubAPI
+                .searchRepositories(keyword: "Swift")
+                .materialize()
+                .toBlocking()
+                .first()!
+            
+            XCTAssertEqual(result.error as! APIClientError, .requestError)
+            XCTAssertNil(result.element)
+        }
     }
 }
