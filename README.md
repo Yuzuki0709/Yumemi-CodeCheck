@@ -1,46 +1,104 @@
-# 株式会社ゆめみ iOS エンジニアコードチェック課題
+# 株式会社ゆめみiOSエンジニアコードチェック課題
 
 ## 概要
 
-本プロジェクトは株式会社ゆめみ（以下弊社）が、弊社に iOS エンジニアを希望する方に出す課題のベースプロジェクトです。本課題が与えられた方は、下記の概要を詳しく読んだ上で課題を取り組んでください。
+株式会社ゆめみコードチェック課題です。  
+概要レポジトリ: https://github.com/yumemi-inc/ios-engineer-codecheck.git
 
-## アプリ仕様
+## 開発概要
 
-本アプリは GitHub のリポジトリーを検索するアプリです。
+### 開発環境
 
-![動作イメージ](README_Images/app.gif)
+- M1 macOS Monterey 12.6
+- Xcode 14.0.1
+- Swift 5.7
 
-### 環境
+### ライブラリ管理ツール
 
-- IDE：基本最新の安定版（本概要更新時点では Xcode 13.0）
-- Swift：基本最新の安定版（本概要更新時点では Swift 5.5）
-- 開発ターゲット：基本最新の安定版（本概要更新時点では iOS 15.0）
-- サードパーティーライブラリーの利用：オープンソースのものに限り制限しない
+- [x] Swift Package Manager
+- [ ] CocoaPods
+- [ ] Carhage
 
-### 動作
+### 使用したライブラリ
 
-1. 何かしらのキーワードを入力
-2. GitHub API（`search/repositories`）でリポジトリーを検索し、結果一覧を概要（リポジトリ名）で表示
-3. 特定の結果を選択したら、該当リポジトリの詳細（リポジトリ名、オーナーアイコン、プロジェクト言語、Star 数、Watcher 数、Fork 数、Issue 数）を表示
+| ライブラリ名 | 用途 |
+| :----------: |:----:|
+| [RxSwift](https://github.com/ReactiveX/RxSwift.git) | MVVMを実現するために使用 |
+| [Moya](https://github.com/Moya/Moya.git) | API通信の実装を楽にするために使用 |
+| [Kingfisher](https://github.com/onevcat/Kingfisher.git) | ユーザの画像を表示するために使用 |
+| [Lottie](https://github.com/airbnb/lottie-ios.git) | アニメーションを実装するために使用 |
+| [PKHUB](https://github.com/pkluz/PKHUD.git) | ロードアニメーションを実装するために使用 |
 
-## 課題取り組み方法
+### 採用したアーキテクチャ
 
-Issues を確認した上、本プロジェクトを [**Duplicate** してください](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/duplicating-a-repository)（Fork しないようにしてください。必要ならプライベートリポジトリーにしても大丈夫です）。今後のコミットは全てご自身のリポジトリーで行ってください。
+`MVVMアーキテクチャ(sergdort)`を採用した。採用した理由は、自分が最も使い慣れたアーキテクチャであり、一番実力が発揮できると考えたからである。MVVMアーキテクチャを実現するにあたり、`RxSwift`ライブラリを使用した。
 
-コードチェックの課題 Issue は全て [`課題`](https://github.com/yumemi/ios-engineer-codecheck/milestone/1) Milestone がついており、難易度に応じて Label が [`初級`](https://github.com/yumemi/ios-engineer-codecheck/issues?q=is%3Aopen+is%3Aissue+label%3A初級+milestone%3A課題)、[`中級`](https://github.com/yumemi/ios-engineer-codecheck/issues?q=is%3Aopen+is%3Aissue+label%3A中級+milestone%3A課題+) と [`ボーナス`](https://github.com/yumemi/ios-engineer-codecheck/issues?q=is%3Aopen+is%3Aissue+label%3Aボーナス+milestone%3A課題+) に分けられています。課題の必須／選択は下記の表とします：
+- 参考書籍
+    - [iOSアプリ設計パターン入門](https://peaks.cc/books/iOS_architecture)
+    - [RxSwift研究読本3 ViewModel設計パターン入門](https://swift.booth.pm/items/1223536)
+- 参考レポジトリ
+    - [sergdort/CleanArchitectureRxSwift](https://github.com/sergdort/CleanArchitectureRxSwift.git)
+    - [ryu1sazae/Sergdort-MVVM-Practice](https://github.com/ryu1sazae/Sergdort-MVVM-Practice.git)
 
-|   | 初級 | 中級 | ボーナス
-|--:|:--:|:--:|:--:|
-| 新卒／未経験者 | 必須 | 選択 | 選択 |
-| 中途／経験者 | 必須 | 必須 | 選択 |
+### Git管理
 
+- ブランチ管理は、`Git-Flow`を採用
+- コミットメッセージは以下の通り
 
-課題 Issueをご自身のリポジトリーにコピーするGitHub Actionsをご用意しております。  
-[こちらのWorkflow](./.github/workflows/copy-issues.yml)を[手動でトリガーする](https://docs.github.com/ja/actions/managing-workflow-runs/manually-running-a-workflow)ことでコピーできますのでご活用下さい。
+| コミットメッセージ | 用途 |
+|:------------------:|:----:|
+| add | ファイルの追加(最低限の実装込み) |
+| feat | 機能の追加 |
+| delete | ファイルやコードの削除 |
+| rename | ファイル名や関数名、変数名の変更 |
+| fix | バグやタイプミスを修正 |
+| refactor | 仕様には影響がないコード改善 |
 
-課題が完成したら、リポジトリーのアドレスを教えてください。
+- 参考記事
+    - [僕が考える最強のコミットメッセージの書き方](https://qiita.com/konatsu_p/items/dfe199ebe3a7d2010b3e) 
+    - [Gitのコミットメッセージの書き方](https://qiita.com/itosho/items/9565c6ad2ffc24c09364)
 
-## 参考記事
+### アピールポイント
+- API周り
+    - Moyaライブラリを使って、できるだけシンプルに記述した。
+    - テストがしやすいように、protocolやコンストラクタを利用した。
+    - レスポンスのステータスコードによって、エラーを判別できるようにした。
+- UI/UX
+    - `API通信中`は、ロードのアニメーションが表示されるようにした。
+    - `エラーが起きた時`は、エラーのアニメーションとアラートが表示されるようにした。
+    - `検索結果が0`だったら、専用のアニメーションとアラートが表示されるようにした。
+    - `検索画面`から、一目でスター数と使用言語がわかるようにした。
+    - `詳細画面`は、iPhoneの設定画面を参考に作成した。
+    - またホームページやREADMEの有無によって、各Cellが表示されるようにした。
+- テスト
+    - UIテストは`PageObjectPattern`を採用した。
+    - `RxTest`や`RxBlocking`を使用して、非同期処理のテストをシンプルに記述した。
+    - `Mock`を利用して、ViewModelとModelを分離してテストした。
+    - `XCTContent`を使用して、構造をわかりやすくした。
 
-提出された課題の評価ポイントに関しては、[こちらの記事](https://qiita.com/lovee/items/d76c68341ec3e7beb611)に詳しく書かれてありますので、ぜひご覧ください。
-ライブラリの利用に関しては [こちらの記事](https://qiita.com/ykws/items/b951a2e24ca85013e722)も参照ください。
+### 参考にした記事
+各PRに記載。
+
+## アプリ概要
+
+### 動作イメージ
+| Lightモード | Darkモード |
+| :---------: | :--------: |
+|![動作イメージ(Light)](README_Images/workflow.gif) | ![動作イメージ(Dark)](README_Images/workflowDark.gif)
+
+### 画面詳細
+#### Lightモード
+| 検索前 | 検索後 | 詳細画面 |
+|:------:| :-----:| :-------:|
+|![検索前](README_Images/SearchBefore.png)| ![検索後](README_Images/SearchAfter.png) | ![詳細画面](README_Images/Details.png)
+
+#### Darkモード
+| 検索前 | 検索後 | 詳細画面 |
+|:------:| :-----:| :-------:|
+|![検索前](README_Images/SearchBeforeDark.png)| ![検索後](README_Images/SearchAfterDark.png) | ![詳細画面](README_Images/DetailsDark.png)
+
+#### その他
+
+| ロード中 | 検索結果0 | 通信エラー |
+| :----:| :------: | :-----: |
+| ![ロード中](README_Images/Loading.png) | ![空アラート](README_Images/EmptyAlert.png) | ![エラーアラート](README_Images/ErrorAlert.png) |
