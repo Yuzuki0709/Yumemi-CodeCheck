@@ -223,6 +223,15 @@
 			path = Stub;
 			sourceTree = "<group>";
 		};
+		A247582F2925C36E000F6E22 /* SampleData */ = {
+			isa = PBXGroup;
+			children = (
+				A2475817292592DB000F6E22 /* RepositorySampleData.swift */,
+				A2475819292594C3000F6E22 /* ReadmeSampleData.swift */,
+			);
+			path = SampleData;
+			sourceTree = "<group>";
+		};
 		A2504FFA29236160001533DF /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +322,7 @@
 				A25050312923B074001533DF /* UIImageView.swift */,
 				A25050382923B8FE001533DF /* RxSwift.swift */,
 				A2D71D772924CDDE00517B55 /* WKNavigationDelegate+Rx.swift */,
+				A250504A29249525001533DF /* UIViewController+Rx.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -322,7 +332,6 @@
 			children = (
 				A250503C292449C9001533DF /* DateHelper.swift */,
 				A250503E29246511001533DF /* ByteHelper.swift */,
-				A250504A29249525001533DF /* UIViewController+Rx.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -395,13 +404,12 @@
 		BFD945F4244DC5EB0012785A /* iOSEngineerCodeCheckTests */ = {
 			isa = PBXGroup;
 			children = (
+				A247582F2925C36E000F6E22 /* SampleData */,
 				A247581B29259528000F6E22 /* Mock */,
 				A247581E29259714000F6E22 /* ViewModel */,
 				A24758252925AFEB000F6E22 /* API */,
 				BFD945F5244DC5EB0012785A /* iOSEngineerCodeCheckTests.swift */,
 				BFD945F7244DC5EB0012785A /* Info.plist */,
-				A2475817292592DB000F6E22 /* RepositorySampleData.swift */,
-				A2475819292594C3000F6E22 /* ReadmeSampleData.swift */,
 			);
 			path = iOSEngineerCodeCheckTests;
 			sourceTree = "<group>";
