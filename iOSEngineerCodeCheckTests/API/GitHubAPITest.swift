@@ -12,4 +12,9 @@ final class GitHubAPITest: XCTestCase {
     var disposeBag: DisposeBag!
     var githubAPI:  GitHubAPI!
     var stub:       MoyaProvider<GitHubAPITarget>!
+    
+    override func setUp() {
+        scheduler  = TestScheduler(initialClock: 0)
+        disposeBag = DisposeBag()
+    }
 }
