@@ -34,6 +34,12 @@ public struct GitHubRepository: Codable {
     }
 }
 
+extension GitHubRepository: Equatable {
+    public static func == (lhs: GitHubRepository, rhs: GitHubRepository) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
+
 public struct Owner: Codable {
     public let login    : String
     public let avatarURL: String
