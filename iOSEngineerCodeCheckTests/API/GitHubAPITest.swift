@@ -51,4 +51,18 @@ final class GitHubAPITest: XCTestCase {
             XCTAssertNil(result.element)
         }
     }
+    
+    func testSearchReadme() {
+        XCTContext.runActivity(named: "成功") { _ in
+            stub      = GitHubAPITargetProvider.stub200.provider
+            githubAPI = GitHubAPI(provider: stub)
+            
+            let readme = try! githubAPI
+                .searchReadme(ownerName: "apple", repositoryName: "swift")
+                .toBlocking()
+                .first()!
+            
+            XCTAssertEqual(readme.htmlURL, "https://github.com/apple/swift/blob/main/README.md")
+        }
+    }
 }
