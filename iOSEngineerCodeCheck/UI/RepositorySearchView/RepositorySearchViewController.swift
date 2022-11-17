@@ -129,7 +129,7 @@ extension RepositorySearchViewController {
         output.selectedRepository
             .drive(onNext: { [weak self] repository in
                 guard let self = self else { return }
-                
+                // レポジトリセルをタップしたら、詳細画面に遷移する
                 let vc = RepositoryDetailViewController.make(repository: repository)
                 self.navigationController?.pushViewController(vc, animated: true)
             })

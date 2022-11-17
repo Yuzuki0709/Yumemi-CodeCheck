@@ -123,7 +123,7 @@ extension RepositoryDetailViewController {
         output.goHomepageView
             .drive(onNext: { [weak self] homepageURL in
                 guard let self = self else { return }
-                
+                // ホームページセルをタップしたら、Webでホームページを表示する
                 let vc = WebViewController.make(url: homepageURL)
                 self.present(vc, animated: true)
             })
@@ -132,7 +132,7 @@ extension RepositoryDetailViewController {
         output.goReadmeView
             .drive(onNext: { [weak self] readmeURL in
                 guard let self = self else { return }
-                
+                // READMEセルをタップしたら、WebでREADMEを表示する
                 let vc = WebViewController.make(url: readmeURL)
                 self.present(vc, animated: true)
             })
